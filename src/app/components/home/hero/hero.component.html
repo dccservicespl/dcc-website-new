@@ -1,1 +1,42 @@
-<p>hero works!</p>
+<section class="slider-container relative pt-24 pb-8 lg:pt-36">
+  <div class="floating-blob w-96 h-96 bg-orange-200 -top-20 -left-20"></div>
+  
+  <!-- Slides -->
+  <div *ngFor="let slide of heroSlides; let i = index" 
+       class="slide" 
+       [ngClass]="{'active': currentSlide === i}">
+    <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="section-tag mb-6">{{slide.tag}}</span>
+        <h1 class="text-5xl md:text-7xl font-black text-slate-900 leading-[1.1] mb-6" 
+            [innerHTML]="slide.title">
+        </h1>
+        <p class="text-slate-600 text-lg mb-10 leading-relaxed max-w-lg">
+          {{slide.description}}
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a [href]="slide.buttonHref" class="btn-primary text-sm shadow-xl shadow-orange-500/20">
+            {{slide.buttonText}} <i [class]="slide.buttonIcon + ' ml-3'"></i>
+          </a>
+        </div>
+      </div>
+      <div class="relative hidden lg:block">
+        <div class="glass-card p-4 rounded-[3rem] overflow-hidden shadow-2xl" 
+             [ngClass]="i % 2 === 0 ? 'rotate-2' : '-rotate-2'">
+          <img [src]="slide.image" 
+               class="rounded-[2.5rem] object-cover w-full h-[400px]" 
+               [ngClass]="i === 0 ? 'grayscale-[20%]' : ''"
+               [alt]="slide.title">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slider Controls -->
+  <div class="max-w-7xl mx-auto px-6 mt-8 flex items-center justify-start space-x-2">
+    <span *ngFor="let slide of heroSlides; let i = index" 
+          class="dot" 
+          [ngClass]="{'active': currentSlide === i}"
+          (click)="goToSlide(i)"></span>
+  </div>
+</section>

@@ -1,1 +1,43 @@
-<p>footer works!</p>
+<footer id="contact" class="pt-16 pb-10 bg-slate-950 text-white rounded-t-[3rem]">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid lg:grid-cols-4 gap-12 mb-12">
+      <div class="lg:col-span-2">
+        <div class="flex items-center space-x-3 mb-6">
+          <div class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-white font-black italic text-xs">DCC</div>
+          <span class="text-xl font-black tracking-tighter uppercase">DATA<span class="text-brand">Consultants</span></span>
+        </div>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-6">Expert IT services since 1985. Specialized in SAP, Security, and Gen AI.</p>
+        <div class="flex space-x-4">
+          <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand transition">
+            <i class="fab fa-linkedin-in text-xs"></i>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand transition">
+            <i class="fab fa-twitter text-xs"></i>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-black text-[9px] uppercase tracking-widest mb-6 text-white/40">Services</h4>
+        <ul class="space-y-2 text-xs font-bold text-slate-300">
+          <li>SAP Consulting</li>
+          <li>Gen AI Agents</li>
+          <li>Security</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-black text-[9px] uppercase tracking-widest mb-6 text-white/40">Subscribe</h4>
+        <form class="flex gap-2" (ngSubmit)="onSubscribe($event)" #subscribeForm="ngForm">
+          <input type="email" 
+                 placeholder="Email" 
+                 [(ngModel)]="subscribeEmail"
+                 name="email"
+                 class="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-[10px] w-full text-white placeholder-slate-400">
+          <button type="submit" class="bg-brand px-4 py-2 rounded-lg font-black text-[10px]">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="border-t border-white/5 pt-8 text-center text-slate-500 text-[8px] font-black uppercase tracking-widest">
+      <p>&copy; 2026 Data Consultants Corporation. USA • AFRICA • INDIA</p>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,30 @@
+/* Hero Slider Styles */
+.slider-container { 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.slide { 
+  display: none; 
+  transition: opacity 1s ease-in-out; 
+}
+
+.slide.active { 
+  display: block; 
+}
+
+.dot { 
+  height: 4px; 
+  width: 24px; 
+  margin: 0 4px; 
+  background-color: #cbd5e1; 
+  border-radius: 2px; 
+  display: inline-block; 
+  cursor: pointer; 
+  transition: all 0.3s ease; 
+}
+
+.dot.active { 
+  background-color: var(--brand); 
+  width: 48px; 
+}
