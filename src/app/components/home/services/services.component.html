@@ -2,20 +2,29 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-12">
       <span class="section-tag mb-4">Our Core Competencies</span>
-      <h2 class="text-4xl font-black text-slate-900">Mastering the Digital Landscape</h2>
+      <h2 class="text-4xl font-black text-slate-900">
+        Mastering the Digital Landscape
+      </h2>
     </div>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="glass-card p-8 rounded-[2rem]" *ngFor="let service of serviceCards">
-        <div class="w-10 h-10 rounded-lg flex items-center justify-center mb-4 shadow-inner"
-             [ngClass]="{
-               'bg-blue-50 text-blue-500': service.color === 'blue',
-               'bg-orange-50 text-orange-500': service.color === 'orange',
-               'bg-red-50 text-red-500': service.color === 'red'
-             }">
+      <div
+        class="glass-card p-8 rounded-[2rem]"
+        *ngFor="let service of serviceCards"
+      >
+        <div
+          class="w-10 h-10 rounded-lg flex items-center justify-center mb-4 shadow-inner"
+          [ngClass]="{
+            'bg-blue-50 text-blue-500': service.color === 'blue',
+            'bg-orange-50 text-orange-500': service.color === 'orange',
+            'bg-red-50 text-red-500': service.color === 'red'
+          }"
+        >
           <i [class]="service.icon"></i>
         </div>
-        <h3 class="text-lg font-extrabold mb-2">{{service.title}}</h3>
-        <p class="text-slate-500 text-xs leading-relaxed">{{service.description}}</p>
+        <h3 class="text-lg font-extrabold mb-2">{{ service.title }}</h3>
+        <p class="text-slate-500 text-xs leading-relaxed">
+          {{ service.description }}
+        </p>
       </div>
     </div>
   </div>

@@ -1,43 +1,116 @@
-<footer id="contact" class="pt-16 pb-10 bg-slate-950 text-white rounded-t-[3rem]">
+<footer
+  id="contact"
+  class="footer-section pt-16 pb-10 bg-slate-950 text-white rounded-t-[3rem]"
+>
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid lg:grid-cols-4 gap-12 mb-12">
-      <div class="lg:col-span-2">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="">
         <div class="flex items-center space-x-3 mb-6">
-          <div class="w-8 h-8 bg-brand rounded-lg flex items-center justify-center text-white font-black italic text-xs">DCC</div>
-          <span class="text-xl font-black tracking-tighter uppercase">DATA<span class="text-brand">Consultants</span></span>
+          <img src="assets/images/logo2.png" width="150" />
         </div>
-        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-6">Expert IT services since 1985. Specialized in SAP, Security, and Gen AI.</p>
+        <p class="text-slate-400 text-xs leading-relaxed max-w-sm mb-6">
+          Expert IT services since 1985. Specialized in SAP, Security, and Gen
+          AI.
+        </p>
         <div class="flex space-x-4">
-          <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand transition">
+          <a
+            href="https://www.facebook.com/DCC.US.IL"
+            class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand transition"
+            ><i class="fab fa-facebook text-xs"></i>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/company/data-consultants-corp/"
+            class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand transition"
+          >
             <i class="fab fa-linkedin-in text-xs"></i>
           </a>
-          <a href="#" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand transition">
-            <i class="fab fa-twitter text-xs"></i>
+          <a
+            href="https://x.com/dccil"
+            class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center hover:bg-brand transition"
+          >
+            <i class="fab fa-x text-xs"></i>
           </a>
         </div>
       </div>
-      <div>
-        <h4 class="font-black text-[9px] uppercase tracking-widest mb-6 text-white/40">Services</h4>
-        <ul class="space-y-2 text-xs font-bold text-slate-300">
+
+      <div class="">
+        <h4
+          class="font-black text-[9px] uppercase tracking-widest mb-6 text-white/40"
+        >
+          Services
+        </h4>
+        <ul class="text-slate-300">
           <li>SAP Consulting</li>
           <li>Gen AI Agents</li>
           <li>Security</li>
         </ul>
       </div>
-      <div>
-        <h4 class="font-black text-[9px] uppercase tracking-widest mb-6 text-white/40">Subscribe</h4>
-        <form class="flex gap-2" (ngSubmit)="onSubscribe($event)" #subscribeForm="ngForm">
-          <input type="email" 
-                 placeholder="Email" 
-                 [(ngModel)]="subscribeEmail"
-                 name="email"
-                 class="bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-[10px] w-full text-white placeholder-slate-400">
-          <button type="submit" class="bg-brand px-4 py-2 rounded-lg font-black text-[10px]">Join</button>
-        </form>
+
+      <div class="">
+        <h4
+          class="font-black text-[9px] uppercase tracking-widest mb-6 text-white/40"
+        >
+          Address
+        </h4>
+        <ul class="text-slate-300">
+          <li>
+            <span><i class="fa-light fa-location-dot"></i></span> 155 N Wacker
+            Drive, Suite 4250,Chicago,<br />
+            IL 60606
+          </li>
+          <li>
+            <span><i class="fa-light fa-location-dot"></i></span> 600 North
+            Commons Drive #100 Aurora,<br />
+            IL 60504
+          </li>
+          <li>
+            <span><i class="fa-light fa-location-dot"></i></span> Unit No. 704 &
+            705, 7th Floor, ERGO Tower,<br />
+            Plot No. A1-4, Block EP & GP, Sector-V, <br />Kolkata 700091, West
+            Bengal
+          </li>
+          <!-- <li> <span><i class="fa-light fa-location-dot"></i></span> ABL Workspaces, 3rd Floor, F2, Sector-VIII<br> (Near Sec-6, Police Chowki)<br> Noida-201301, UP</li>   -->
+          <li>
+            <span><i class="fa-light fa-location-dot"></i></span> R Workspaces,
+            Unit No-1 Plot No-2,<br />
+            DDA Building District Centre, Vardhman Trade Centre, Nehru Place,
+            New Delhi 110019
+          </li>
+        </ul>
+      </div>
+
+      <div class="">
+        <h4
+          class="font-black text-[9px] uppercase tracking-widest mb-6 text-white/40"
+        >
+          Contact
+        </h4>
+        <ul class="text-slate-300">
+          <li>
+            <a href="mailto:sales@dccil.com"
+              ><span> <i class="fa-light fa-envelope"></i> </span>
+              sales&#64;dccil.com</a
+            >
+          </li>
+          <li>
+            <a href="tel:16306922702"
+              ><span><i class="fa-light fa-phone"></i></span> 1-630-692-2702</a
+            >
+          </li>
+          <li>
+            <a href="tel:913340061204"
+              ><span><i class="fa-light fa-phone"></i></span> 91-33-40061204</a
+            >
+          </li>
+        </ul>
       </div>
     </div>
-    <div class="border-t border-white/5 pt-8 text-center text-slate-500 text-[8px] font-black uppercase tracking-widest">
-      <p>&copy; 2026 Data Consultants Corporation. USA • AFRICA • INDIA</p>
+
+    <div
+      class="border-t border-white/5 pt-8 text-center text-slate-500 text-[8px] font-black uppercase tracking-widest"
+    >
+      <p>&copy; 2026 Data Consultants Corporation. USA • INDIA</p>
     </div>
   </div>
 </footer>

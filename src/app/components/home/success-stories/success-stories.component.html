@@ -2,33 +2,100 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
       <div>
-        <span class="text-brand font-black uppercase tracking-widest text-[10px] mb-2 block">Our Impact</span>
-        <h2 class="text-4xl md:text-5xl font-black text-white">Recent <span class="text-slate-400">Success</span></h2>
+        <span
+          class="text-brand font-black uppercase tracking-widest text-[10px] mb-2 block"
+          >Our Impact</span
+        >
+        <h2 class="text-4xl md:text-5xl font-black text-white">
+          Recent <span class="text-slate-400">Success</span>
+        </h2>
       </div>
-      <a href="#" class="text-slate-400 hover:text-white transition font-bold text-sm mt-4 md:mt-0">
+      <a
+        href="#"
+        class="text-slate-400 hover:text-white transition font-bold text-sm mt-4 md:mt-0"
+      >
         View All Case Studies <i class="fas fa-arrow-right ml-2 text-xs"></i>
       </a>
     </div>
-    
+
     <div class="grid lg:grid-cols-2 gap-8">
       <div class="success-grid-card group" *ngFor="let story of caseStudies">
-        <img [src]="story.image" [alt]="story.title">
+        <img [src]="story.image" [alt]="story.title" />
         <div class="success-content">
           <div class="mb-auto">
-            <span class="bg-white/10 backdrop-blur px-3 py-1 rounded-full text-[9px] font-black uppercase text-white tracking-widest">
-              {{story.category}}
+            <span
+              class="bg-white/10 backdrop-blur px-3 py-1 rounded-full text-[9px] font-black uppercase text-white tracking-widest"
+            >
+              {{ story.category }}
             </span>
           </div>
-          <h3 class="text-2xl font-black text-white mb-3">{{story.title}}</h3>
-          <p class="text-slate-400 text-sm mb-6 leading-relaxed">{{story.description}}</p>
+          <h3 class="text-2xl font-black text-white mb-3">{{ story.title }}</h3>
+          <p class="text-slate-400 text-sm mb-6 leading-relaxed">
+            {{ story.description }}
+          </p>
           <div class="flex gap-4">
-            <div class="px-4 py-2 bg-white/5 rounded-xl border border-white/10" *ngFor="let metric of story.metrics">
-              <span class="block text-brand font-bold">{{metric.value}}</span>
-              <span class="text-[8px] uppercase text-slate-500 font-black">{{metric.label}}</span>
+            <div
+              class="px-4 py-2 bg-white/5 rounded-xl border border-white/10"
+              *ngFor="let metric of story.metrics"
+            >
+              <span class="block text-brand font-bold">{{ metric.value }}</span>
+              <span class="text-[8px] uppercase text-slate-500 font-black">{{
+                metric.label
+              }}</span>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="clients-section py-12 overflow-hidden bg-slate-50 mt-20 mb-2">
+  <div class="max-w-7xl mx-auto px-6 mb-8 text-center">
+    <h3 class="text-xs font-black uppercase tracking-[0.3em] text-slate-400">
+      Trusted By Hundreds of <span>Global Companies </span>
+    </h3>
+  </div>
+  <div class="relative flex overflow-x-hidden">
+    <div class="logo-scroll py-2 space-x-20 items-center">
+      <img src="assets/images/Clients1.jpg" alt="" />
+      <img src="assets/images/Clients2.jpg" alt="" />
+      <img src="assets/images/Clients3.jpg" alt="" />
+      <img src="assets/images/Clients4.jpg" alt="" />
+      <img src="assets/images/Clients5.jpg" alt="" />
+      <img src="assets/images/Clients6.jpg" alt="" />
+      <img src="assets/images/Clients7.jpg" alt="" />
+      <img src="assets/images/Clients8.jpg" alt="" />
+      <img src="assets/images/Clients9.jpg" alt="" />
+      <img src="assets/images/Clients10.jpg" alt="" />
+      <img src="assets/images/Clients11.jpg" alt="" />
+      <img src="assets/images/Clients12.jpg" alt="" />
+      <img src="assets/images/Clients13.jpg" alt="" />
+      <img src="assets/images/Clients14.jpg" alt="" />
+      <img src="assets/images/Clients15.jpg" alt="" />
+      <img src="assets/images/Clients16.jpg" alt="" />
+      <img src="assets/images/Clients17.jpg" alt="" />
+      <img src="assets/images/Clients18.jpg" alt="" />
+
+      <!-- Loop -->
+      <img src="assets/images/Clients1.jpg" alt="" />
+      <img src="assets/images/Clients2.jpg" alt="" />
+      <img src="assets/images/Clients3.jpg" alt="" />
+      <img src="assets/images/Clients4.jpg" alt="" />
+      <img src="assets/images/Clients5.jpg" alt="" />
+      <img src="assets/images/Clients6.jpg" alt="" />
+      <img src="assets/images/Clients7.jpg" alt="" />
+      <img src="assets/images/Clients8.jpg" alt="" />
+      <img src="assets/images/Clients9.jpg" alt="" />
+      <img src="assets/images/Clients10.jpg" alt="" />
+      <img src="assets/images/Clients11.jpg" alt="" />
+      <img src="assets/images/Clients12.jpg" alt="" />
+      <img src="assets/images/Clients13.jpg" alt="" />
+      <img src="assets/images/Clients14.jpg" alt="" />
+      <img src="assets/images/Clients15.jpg" alt="" />
+      <img src="assets/images/Clients16.jpg" alt="" />
+      <img src="assets/images/Clients17.jpg" alt="" />
+      <img src="assets/images/Clients18.jpg" alt="" />
     </div>
   </div>
 </section>
@@ -40,27 +107,43 @@
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
           <span class="section-tag mb-4">Deep Industry Insights</span>
-          <h2 class="text-4xl font-black text-slate-900 mb-6 leading-tight">What <span class="text-brand">Recycle-Easy</span> Solves</h2>
+          <h2 class="text-4xl font-black text-slate-900 mb-6 leading-tight">
+            What <span class="text-brand">Recycle-Easy</span> Solves
+          </h2>
           <p class="text-slate-600 text-lg leading-relaxed mb-6">
-            In the scrap and waste recycling sector, there are several phases involved in managing discarded materials and transforming them into profitable ventures. 
+            In the scrap and waste recycling sector, there are several phases
+            involved in managing discarded materials and transforming them into
+            profitable ventures.
           </p>
-          <p class="text-slate-600 leading-relaxed mb-8">
-            Many of these steps remain obscure and unnoticed by management, making it challenging to pinpoint inefficiencies. This lack of transparency can hinder the company's ability to forecast growth and make informed decisions.
+          <p class="text-slate-600 text-lg leading-relaxed mb-6">
+            Many of these steps remain obscure and unnoticed by management,
+            making it challenging to pinpoint inefficiencies. This lack of
+            transparency can hinder the company's ability to forecast growth and
+            make informed decisions.
           </p>
-          <a href="#" class="inline-flex items-center font-bold text-slate-900 hover:text-brand transition">
+          <a
+            href="#"
+            class="inline-flex items-center font-bold text-slate-900 hover:text-brand transition"
+          >
             Read More <i class="fas fa-arrow-right ml-3 text-xs text-brand"></i>
           </a>
         </div>
         <div class="grid grid-cols-2 gap-4">
-          <div class="p-6 bg-white rounded-3xl shadow-sm border border-slate-100">
+          <div
+            class="p-6 bg-white rounded-3xl shadow-sm border border-slate-100"
+          >
             <i class="fas fa-eye-slash text-slate-400 text-xl mb-4"></i>
             <h4 class="font-bold text-sm mb-2">Hidden Steps</h4>
-            <p class="text-[11px] text-slate-500">Uncover the "obscure" phases in the recycling lifecycle.</p>
+            <p class="text-[11px] text-slate-500">
+              Uncover the "obscure" phases in the recycling lifecycle.
+            </p>
           </div>
           <div class="p-6 bg-orange-50 rounded-3xl border border-orange-100">
             <i class="fas fa-chart-line text-brand text-xl mb-4"></i>
             <h4 class="font-bold text-sm mb-2">Growth Forecasts</h4>
-            <p class="text-[11px] text-slate-500">Transform raw data into clear expansion roadmaps.</p>
+            <p class="text-[11px] text-slate-500">
+              Transform raw data into clear expansion roadmaps.
+            </p>
           </div>
         </div>
       </div>

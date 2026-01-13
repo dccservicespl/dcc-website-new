@@ -7,10 +7,9 @@ export interface MenuItem {
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NavigationService {
-
   mainNavigation: MenuItem[] = [
     {
       label: 'What we do',
@@ -18,45 +17,89 @@ export class NavigationService {
         {
           label: 'Solutions',
           children: [
-            { label: 'Enterprise Resource Planning', href: '#solutions/erp' },
-            { label: 'Customer Experience', href: '#solutions/cx' },
-            { label: 'Security Stack', href: '#solutions/security' }
-          ]
+            { label: 'Enterprise Resource Planning', href: '#' },
+            {
+              label: 'Customer Experience and Application Development',
+              href: '#',
+            },
+            { label: 'Supply Chain Management', href: '#' },
+            { label: 'Customer Relationship Management', href: '#' },
+            { label: 'Security Stack', href: '#' },
+          ],
         },
         {
           label: 'Services',
           children: [
-            { label: 'Cloud Architecture', href: '#services/cloud' },
-            { label: 'Implementation', href: '#services/implementation' },
-            { label: 'Managed Services', href: '#services/managed' }
-          ]
+            { label: 'Change Management', href: '#' },
+            { label: 'Cloud Migration and Architecture', href: '#' },
+            { label: 'Managed Services', href: '#' },
+            { label: 'Data & Analytics', href: '#' },
+            { label: 'Implementation', href: '#' },
+            { label: 'Integration', href: '#' },
+            { label: 'Managed Services & Support', href: '#' },
+            { label: 'Program Management', href: '#' },
+            { label: 'Strategy & Consulting', href: '#' },
+          ],
         },
-        { label: 'Technologies', href: '#technologies' }
-      ]
+        {
+          label: 'Industries',
+          children: [
+            { label: 'Manufacturing', href: '#' },
+            { label: 'Recycling', href: '#' },
+            { label: 'Produce Market', href: '#' },
+            { label: 'Grocery & Retail', href: '#' },
+          ],
+        },
+
+        { label: 'Technologies', href: '#technologies' },
+      ],
     },
     {
       label: 'How we do it',
       children: [
-        { label: 'SAP/Salesforce', href: '#how/sap-salesforce' },
-        { label: 'Microsoft', href: '#how/microsoft' },
-        { label: 'Custom Solutions', href: '#how/custom' }
-      ]
+        { label: 'SAP/Salesforce', href: '#' },
+        { label: 'Microsoft', href: '#' },
+        { label: 'Customs Solutions', href: '#' },
+        { label: 'Security Stack', href: '#' },
+      ],
     },
     {
       label: 'Why DCC',
       children: [
-        { label: 'Mission & Vision', href: '#about/mission' },
-        { label: 'Leadership', href: '#about/leadership' },
-        { label: 'News', href: '#about/news' }
-      ]
+        { label: 'Mission', href: '#' },
+        { label: 'Vision', href: '#' },
+        { label: 'Approach', href: '#' },
+        { label: 'Leadership', href: '#' },
+        { label: 'Partnerships', href: '#' },
+        { label: 'News', href: '#' },
+      ],
     },
     {
       label: 'Insights',
-      href: '#success'
-    }
+      children: [
+        { label: 'Success Stories', href: '#' },
+        { label: 'Events', href: '#' },
+      ],
+    },
+    {
+      label: 'Careers',
+      children: [
+        { label: 'Why work with DCC?', href: '#' },
+        { label: 'Benefits', href: '#' },
+        { label: 'Open Positions', href: '#' },
+      ],
+    },
+    {
+      label: 'Contact',
+      children: [
+        { label: 'Send Message', href: '#' },
+        { label: 'Submit RFP', href: '#' },
+        { label: 'Schedule Meeting', href: '#' },
+      ],
+    },
   ];
 
-  constructor() { }
+  constructor() {}
 
   getMainNavigation(): MenuItem[] {
     return this.mainNavigation;

@@ -1,26 +1,47 @@
-<nav id="main-nav" class="glass-header fixed w-full z-50 top-0 h-20 flex items-center" [ngClass]="{'header-scrolled': isScrolled}">
-  <div class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center h-full">
+<nav
+  id="main-nav"
+  class="glass-header fixed w-full z-50 top-0 h-20 flex items-center"
+  [ngClass]="{ 'header-scrolled': isScrolled }"
+>
+  <div
+    class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center h-full"
+  >
     <!-- Logo -->
-    <div class="flex items-center space-x-3 cursor-pointer" (click)="scrollToTop()">
-      <div class="w-9 h-9 bg-brand rounded-lg flex items-center justify-center text-white font-black italic shadow-lg text-sm">DCC</div>
-      <span class="text-lg font-extrabold tracking-tight uppercase">DATA<span class="text-brand">Consultants</span></span>
+    <div
+      class="flex items-center space-x-3 cursor-pointer"
+      (click)="scrollToTop()"
+    >
+      <img src="assets/images/logo.png" width="150" />
     </div>
-    
+
     <!-- Desktop Navigation -->
-    <div class="hidden lg:flex space-x-2 font-bold text-sm tracking-wide text-slate-600 h-full">
+    <div
+      class="hidden lg:flex space-x-2 font-bold text-sm tracking-wide text-slate-600 h-full"
+    >
       <div class="nav-item px-4 cursor-default" *ngFor="let item of navigation">
         <span class="hover:text-brand transition">
-          {{item.label}} <i class="fas fa-chevron-down text-[10px] ml-1" *ngIf="item.children"></i>
+          {{ item.label }}
+          <i
+            class="fas fa-chevron-down text-[10px] ml-1"
+            *ngIf="item.children"
+          ></i>
         </span>
         <div class="dropdown-content" *ngIf="item.children">
           <div class="submenu" *ngFor="let child of item.children">
             <a [href]="child.href || '#'" class="dropdown-item">
-              {{child.label}} 
-              <i class="fas fa-chevron-right text-[10px]" *ngIf="child.children"></i>
+              {{ child.label }}
+              <i
+                class="fas fa-chevron-right text-[10px]"
+                *ngIf="child.children"
+              ></i>
             </a>
             <div class="submenu-content" *ngIf="child.children">
-              <a [href]="grandchild.href || '#'" class="dropdown-item" *ngFor="let grandchild of child.children">
-                {{grandchild.label}}
+              <a
+                [href]="grandchild.href || '#'"
+                class="dropdown-item"
+                *ngFor="let grandchild of child.children"
+              >
+                {{ grandchild.label }}
               </a>
             </div>
           </div>
@@ -31,18 +52,46 @@
     <!-- Right Section -->
     <div class="flex items-center space-x-4">
       <!-- Country Flags -->
-      <div class="hidden xl:flex space-x-3 items-center mr-4 border-r pr-4 border-slate-200">
-        <span class="text-lg cursor-pointer grayscale hover:grayscale-0">🇺🇸</span>
-        <span class="text-lg cursor-pointer grayscale hover:grayscale-0">🇮🇳</span>
+
+      <div class="nav-item px-4 cursor-default">
+        <span class="hover:text-[#fb9902] transition">
+          <span
+            class="text-lg cursor-pointer grayscale hover:grayscale-0 pull-left pt-2"
+          >
+            <img src="assets/images/Flag_USA.svg" alt="" width="20"
+          /></span>
+          <i class="fas fa-chevron-down text-[10px] ml-1"></i>
+          <!-- <img src="assets/images/Flag_USA.svg" alt="" width="25" /> -->
+        </span>
+        <div class="dropdown-content">
+          <!-- <a href="#" class="dropdown-item pt-1 pb-1">
+            <span class="text-lg cursor-pointer grayscale hover:grayscale-0"
+              >🇺🇸</span
+            >USA</a
+          > -->
+          <a href="#" class="dropdown-item pt-1 pb-1">
+            <span class="text-lg cursor-pointer grayscale hover:grayscale-0">
+              <img src="assets/images/Flag_India.svg" alt="" width="20" />
+            </span>
+            INDIA</a
+          >
+        </div>
       </div>
-      
+
       <!-- Contact Button -->
-      <a href="#contact" class="hidden sm:inline-flex bg-brand text-white px-6 py-2.5 rounded-xl text-xs font-bold shadow-lg hover:bg-slate-900 transition-all">
+      <a
+        href="#contact"
+        class="hidden sm:inline-flex bg-brand text-white px-6 py-2.5 rounded-xl text-xs font-bold shadow-lg hover:bg-slate-900 transition-all"
+      >
         Contact Us
       </a>
-      
+
       <!-- Mobile Menu Button -->
-      <button id="menu-btn" class="lg:hidden text-slate-800 p-2" (click)="toggleMobileMenu()">
+      <button
+        id="menu-btn"
+        class="lg:hidden text-slate-800 p-2"
+        (click)="toggleMobileMenu()"
+      >
         <i class="fas fa-bars"></i>
       </button>
     </div>
@@ -50,7 +99,11 @@
 </nav>
 
 <!-- Mobile Menu -->
-<div id="mobile-menu" class="fixed inset-0 z-[60] bg-white flex-col p-8 lg:hidden" [ngClass]="{'hidden': !isMobileMenuOpen, 'flex': isMobileMenuOpen}">
+<div
+  id="mobile-menu"
+  class="fixed inset-0 z-[60] bg-white flex-col p-8 lg:hidden"
+  [ngClass]="{ hidden: !isMobileMenuOpen, flex: isMobileMenuOpen }"
+>
   <div class="flex justify-between items-center mb-10">
     <span class="font-black">MENU</span>
     <button id="close-btn" class="text-2xl" (click)="toggleMobileMenu()">
@@ -58,7 +111,8 @@
     </button>
   </div>
   <div class="flex flex-col space-y-6">
-    <a href="#" class="text-xl font-bold" *ngFor="let item of navigation">{{item.label}}</a>
-    <a href="#contact" class="bg-brand text-white text-center py-4 rounded-xl font-bold">Work With Us</a>
+    <a href="#" class="text-xl font-bold" *ngFor="let item of navigation">{{
+      item.label
+    }}</a>
   </div>
 </div>
