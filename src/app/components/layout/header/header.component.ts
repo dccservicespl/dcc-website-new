@@ -1,4 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { NavigationService, MenuItem } from '../../../services/navigation.service';
 
 @Component({
@@ -11,7 +12,10 @@ export class HeaderComponent implements OnInit {
   isScrolled = false;
   isMobileMenuOpen = false;
 
-  constructor(private navigationService: NavigationService) { }
+  constructor(
+    private navigationService: NavigationService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
     this.navigation = this.navigationService.getMainNavigation();
@@ -28,5 +32,18 @@ export class HeaderComponent implements OnInit {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+
+  navigateToDetails(item: MenuItem, parentLabels: string[] = []): void {
+    if (item.slug) {
+      const breadcrumb = [...parentLabels, item.label].join(' > ');
+      this.router.navigate(['/details', item.slug], {
+        queryParams: { breadcrumb }
+      });
+    }
+  }
+
+  getBreadcrumbPath(parentLabels: string[], currentLabel: string): string {
+    return [...parentLabels, currentLabel].join(' > ');
   }
 }

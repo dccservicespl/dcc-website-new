@@ -11,6 +11,8 @@ import { AboutComponent } from './components/home/about/about.component';
 import { ServicesComponent } from './components/home/services/services.component';
 import { SuccessStoriesComponent } from './components/home/success-stories/success-stories.component';
 import { TrustedByComponent } from './components/home/trusted-by/trusted-by.component';
+import { DetailsComponent } from './components/details/details.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { TrustedByComponent } from './components/home/trusted-by/trusted-by.comp
     AboutComponent,
     ServicesComponent,
     SuccessStoriesComponent,
-    TrustedByComponent
+    TrustedByComponent,
+    DetailsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -28,17 +28,31 @@
         </span>
         <div class="dropdown-content" *ngIf="item.children">
           <div class="submenu" *ngFor="let child of item.children">
-            <a [href]="child.href || '#'" class="dropdown-item">
+            <a 
+              class="dropdown-item cursor-pointer"
+              (click)="navigateToDetails(child, [item.label])"
+              *ngIf="child.slug"
+            >
               {{ child.label }}
               <i
                 class="fas fa-chevron-right text-[10px]"
                 *ngIf="child.children"
               ></i>
             </a>
+            <span 
+              class="dropdown-item"
+              *ngIf="!child.slug"
+            >
+              {{ child.label }}
+              <i
+                class="fas fa-chevron-right text-[10px]"
+                *ngIf="child.children"
+              ></i>
+            </span>
             <div class="submenu-content" *ngIf="child.children">
               <a
-                [href]="grandchild.href || '#'"
-                class="dropdown-item"
+                class="dropdown-item cursor-pointer"
+                (click)="navigateToDetails(grandchild, [item.label, child.label])"
                 *ngFor="let grandchild of child.children"
               >
                 {{ grandchild.label }}
