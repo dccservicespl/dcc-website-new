@@ -21,48 +21,58 @@
     <div class="floating-blob w-64 h-64 bg-blue-200 top-1/2 -left-32"></div>
 
     <div class="max-w-4xl mx-auto px-6 relative z-10">
-      <!-- Breadcrumbs -->
-      <nav class="mb-8" *ngIf="breadcrumbs.length > 0">
-        <ol class="flex items-center space-x-2 text-sm text-slate-600">
-          <li>
-            <button 
-              (click)="navigateHome()" 
-              class="hover:text-brand transition-colors cursor-pointer"
-            >
-              Home
-            </button>
-          </li>
-          <li *ngFor="let crumb of breadcrumbs; let last = last">
-            <span class="mx-2">/</span>
-            <span [ngClass]="last ? 'text-slate-900 font-medium' : 'text-slate-600'">
-              {{ crumb }}
+      <!-- Compact Header Section -->
+      <div class="mb-6">
+        <!-- Navigation Bar -->
+        <div class="flex items-center justify-between mb-4">
+          <!-- Breadcrumbs -->
+          <nav class="flex-1">
+            <ol class="flex items-center space-x-1.5 text-sm">
+              <li>
+                <button 
+                  (click)="navigateHome()" 
+                  class="text-slate-500 hover:text-brand transition-colors cursor-pointer flex items-center"
+                >
+                  <i class="fas fa-home text-xs mr-1"></i>
+                  Home
+                </button>
+              </li>
+              <li *ngFor="let crumb of breadcrumbs; let last = last" class="flex items-center">
+                <i class="fas fa-chevron-right text-slate-400 text-xs mx-2"></i>
+                <span [ngClass]="last ? 'text-slate-900 font-semibold' : 'text-slate-500'">
+                  {{ crumb }}
+                </span>
+              </li>
+            </ol>
+          </nav>
+          
+          <!-- Back Button -->
+          <button 
+            (click)="goBack()" 
+            class="inline-flex items-center text-slate-500 hover:text-brand transition-all duration-200 text-sm font-medium px-3 py-1.5 rounded-lg hover:bg-slate-50"
+          >
+            <i class="fas fa-arrow-left mr-2 text-xs"></i>
+            Back
+          </button>
+        </div>
+
+        <!-- Compact Page Header -->
+        <div class="text-left">
+          <div class="flex items-center mb-3">
+            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-brand/10 text-brand">
+              {{ breadcrumbs[breadcrumbs.length - 2] || 'Details' }}
             </span>
-          </li>
-        </ol>
-      </nav>
-
-      <!-- Back Button -->
-      <button 
-        (click)="goBack()" 
-        class="inline-flex items-center text-brand hover:text-slate-900 transition-colors mb-8 text-sm font-medium"
-      >
-        <i class="fas fa-arrow-left mr-2"></i>
-        Go Back
-      </button>
-
-      <!-- Page Header -->
-      <div class="text-center mb-12">
-        <span class="section-tag mb-6">{{ breadcrumbs[breadcrumbs.length - 2] || 'Details' }}</span>
-        <h1 class="text-4xl md:text-6xl font-black text-slate-900 leading-tight mb-6">
-          {{ title }}
-        </h1>
-        <div class="w-24 h-1 bg-brand mx-auto rounded-full"></div>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-black text-slate-900 leading-tight">
+            {{ title }}
+          </h1>
+        </div>
       </div>
 
       <!-- Content Card -->
       <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
         <!-- Hero Image (if available) -->
-        <div *ngIf="content.image" class="h-64 md:h-80 bg-gradient-to-r from-brand to-orange-500 relative overflow-hidden">
+        <div *ngIf="content.image" class="h-32 md:h-40 bg-gradient-to-r from-brand to-orange-500 relative overflow-hidden">
           <img 
             [src]="content.image" 
             [alt]="title" 
@@ -71,29 +81,32 @@
           >
           <div class="absolute inset-0 bg-gradient-to-r from-brand/80 to-orange-500/80 flex items-center justify-center" 
                *ngIf="content.image === 'placeholder' || !content.image">
-            <i class="fas fa-cogs text-6xl text-white opacity-50"></i>
+            <div class="text-center">
+              <i class="fas fa-cogs text-3xl md:text-4xl text-white opacity-60 mb-1"></i>
+              <p class="text-white/70 text-xs md:text-sm font-medium">{{ title }}</p>
+            </div>
           </div>
         </div>
 
-        <div class="p-8 md:p-12">
+        <div class="p-6 md:p-8">
           <!-- Overview Section -->
-          <div class="mb-10">
-            <h2 class="text-2xl font-bold text-slate-900 mb-4">Overview</h2>
-            <p class="text-slate-600 leading-relaxed text-lg">
+          <div class="mb-8">
+            <h2 class="text-xl md:text-2xl font-bold text-slate-900 mb-4">Overview</h2>
+            <p class="text-slate-600 leading-relaxed text-base md:text-lg">
               {{ content.description || 'Discover how DCC leverages cutting-edge technology and industry expertise to deliver exceptional ' + title.toLowerCase() + ' solutions that drive business growth and operational excellence.' }}
             </p>
           </div>
 
           <!-- Key Features -->
-          <div class="mb-10">
-            <h3 class="text-xl font-bold text-slate-900 mb-6">Key Features & Benefits</h3>
-            <div class="grid md:grid-cols-2 gap-6">
-              <div *ngFor="let feature of content.features || getDefaultFeatures()" class="flex items-start space-x-4">
-                <div class="flex-shrink-0 w-12 h-12 bg-brand/10 rounded-xl flex items-center justify-center">
-                  <i [class]="feature.icon || 'fas fa-check'" class="text-brand text-lg"></i>
+          <div class="mb-8">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-5">Key Features & Benefits</h3>
+            <div class="grid md:grid-cols-2 gap-5">
+              <div *ngFor="let feature of content.features || getDefaultFeatures()" class="flex items-start space-x-3">
+                <div class="flex-shrink-0 w-10 h-10 bg-brand/10 rounded-lg flex items-center justify-center">
+                  <i [class]="feature.icon || 'fas fa-check'" class="text-brand text-sm"></i>
                 </div>
                 <div>
-                  <h4 class="font-semibold text-slate-900 mb-2">{{ feature.title }}</h4>
+                  <h4 class="font-semibold text-slate-900 mb-1 text-sm md:text-base">{{ feature.title }}</h4>
                   <p class="text-slate-600 text-sm leading-relaxed">{{ feature.description }}</p>
                 </div>
               </div>
@@ -101,14 +114,14 @@
           </div>
 
           <!-- Technologies/Methods Used -->
-          <div class="mb-10" *ngIf="content.technologies || content.methods">
-            <h3 class="text-xl font-bold text-slate-900 mb-6">
+          <div class="mb-8" *ngIf="content.technologies || content.methods">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4">
               {{ content.technologies ? 'Technologies Used' : 'Our Approach' }}
             </h3>
-            <div class="flex flex-wrap gap-3">
+            <div class="flex flex-wrap gap-2">
               <span 
                 *ngFor="let item of content.technologies || content.methods || getDefaultTechnologies()"
-                class="px-4 py-2 bg-slate-100 text-slate-700 rounded-full text-sm font-medium"
+                class="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-full text-xs md:text-sm font-medium"
               >
                 {{ item }}
               </span>
@@ -116,31 +129,31 @@
           </div>
 
           <!-- Industries Served -->
-          <div class="mb-10">
-            <h3 class="text-xl font-bold text-slate-900 mb-6">Industries We Serve</h3>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="mb-8">
+            <h3 class="text-lg md:text-xl font-bold text-slate-900 mb-4">Industries We Serve</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
               <div *ngFor="let industry of content.industries || getDefaultIndustries()" 
-                   class="text-center p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors">
-                <i [class]="industry.icon || 'fas fa-building'" class="text-brand text-2xl mb-2"></i>
-                <p class="text-sm font-medium text-slate-700">{{ industry.name }}</p>
+                   class="text-center p-3 bg-slate-50 rounded-lg hover:bg-slate-100 transition-colors">
+                <i [class]="industry.icon || 'fas fa-building'" class="text-brand text-xl mb-1"></i>
+                <p class="text-xs md:text-sm font-medium text-slate-700">{{ industry.name }}</p>
               </div>
             </div>
           </div>
 
           <!-- Call to Action -->
-          <div class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-2xl p-8 text-center">
-            <h3 class="text-2xl font-bold text-slate-900 mb-4">Ready to Get Started?</h3>
-            <p class="text-slate-600 mb-6">
+          <div class="bg-gradient-to-r from-slate-50 to-blue-50 rounded-xl p-6 text-center">
+            <h3 class="text-xl md:text-2xl font-bold text-slate-900 mb-3">Ready to Get Started?</h3>
+            <p class="text-slate-600 mb-5 text-sm md:text-base">
               Contact our expert team to learn how we can help transform your business with {{ title.toLowerCase() }}.
             </p>
-            <div class="flex flex-wrap justify-center gap-4">
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
               <a href="#contact" 
-                 class="btn-primary">
+                 class="btn-primary text-sm">
                 Contact Our Experts <i class="fas fa-arrow-right ml-2"></i>
               </a>
               <button 
                 (click)="navigateHome()" 
-                class="px-6 py-3 border-2 border-slate-300 text-slate-700 rounded-xl font-semibold hover:border-brand hover:text-brand transition-colors">
+                class="px-4 py-2.5 border-2 border-slate-300 text-slate-700 rounded-lg font-semibold hover:border-brand hover:text-brand transition-colors text-sm">
                 View All Services
               </button>
             </div>

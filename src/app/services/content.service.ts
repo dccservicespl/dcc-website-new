@@ -44,6 +44,11 @@ export interface DetailContent {
   providedIn: 'root',
 })
 export class ContentService {
+  // Mission and Vision Statements
+  valueStatement = `At Data Consultants, we are committed to providing our clients a partnership for the long haul. Our strategy has always been to partner with the best in the industry. We then obtain the highest level of solution specialization available from these key partners. This allows us to provide solutions to our clients through projects that exceed their expectation.`;
+
+  missionStatement = `We provide end-to-end solutions for our clients, right from strategic consulting to full implementation. We deliver solutions as per business demands, efficiently and with the required security. We also assist business' to transform their application and infrastructure landscape as per the new wave.`;
+
   companyStats: CompanyStats[] = [
     { value: '38+', label: 'Years Excellence' },
     { value: '1200+', label: 'Projects Delivered' },
@@ -361,6 +366,74 @@ export class ContentService {
         { name: 'Startups', icon: 'fas fa-rocket' },
         { name: 'Government', icon: 'fas fa-flag' },
         { name: 'Education', icon: 'fas fa-school' }
+      ]
+    },
+    'mission': {
+      title: 'Our Mission',
+      description: this.missionStatement,
+      image: 'placeholder',
+      features: [
+        {
+          title: 'End-to-End Solutions',
+          description: 'We provide comprehensive solutions from strategic consulting to full implementation.',
+          icon: 'fas fa-tasks'
+        },
+        {
+          title: 'Business Demands',
+          description: 'We deliver solutions efficiently and securely as per business requirements.',
+          icon: 'fas fa-business-time'
+        },
+        {
+          title: 'Transformation Partner',
+          description: 'We assist businesses to transform their application and infrastructure landscape.',
+          icon: 'fas fa-exchange-alt'
+        },
+        {
+          title: 'Modern Wave',
+          description: 'We help businesses adapt to the new wave of technological advancement.',
+          icon: 'fas fa-wave-square'
+        }
+      ],
+      technologies: ['Strategic Consulting', 'Implementation', 'Security', 'Infrastructure Transformation', 'Application Development'],
+      industries: [
+        { name: 'Enterprise', icon: 'fas fa-building' },
+        { name: 'Healthcare', icon: 'fas fa-heartbeat' },
+        { name: 'Finance', icon: 'fas fa-university' },
+        { name: 'Manufacturing', icon: 'fas fa-industry' }
+      ]
+    },
+    'vision': {
+      title: 'Our Values',
+      description: this.valueStatement,
+      image: 'placeholder',
+      features: [
+        {
+          title: 'Long-haul Partnership',
+          description: 'We are committed to providing clients with a partnership built for the long term.',
+          icon: 'fas fa-handshake'
+        },
+        {
+          title: 'Industry Excellence',
+          description: 'Our strategy focuses on partnering with the best in the industry.',
+          icon: 'fas fa-award'
+        },
+        {
+          title: 'Solution Specialization',
+          description: 'We obtain the highest level of solution specialization from our key partners.',
+          icon: 'fas fa-graduation-cap'
+        },
+        {
+          title: 'Exceeding Expectations',
+          description: 'We deliver solutions through projects that consistently exceed client expectations.',
+          icon: 'fas fa-star'
+        }
+      ],
+      technologies: ['Partnership Strategy', 'Solution Specialization', 'Quality Assurance', 'Client Excellence', 'Industry Standards'],
+      industries: [
+        { name: 'Technology', icon: 'fas fa-microchip' },
+        { name: 'Consulting', icon: 'fas fa-users-cog' },
+        { name: 'Professional Services', icon: 'fas fa-briefcase' },
+        { name: 'Innovation', icon: 'fas fa-lightbulb' }
       ]
     }
   };
