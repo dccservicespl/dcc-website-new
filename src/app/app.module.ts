@@ -13,6 +13,7 @@ import { SuccessStoriesComponent } from './components/home/success-stories/succe
 import { TrustedByComponent } from './components/home/trusted-by/trusted-by.component';
 import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
+import { SolutionsComponent } from './components/solutions/solutions.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { HomeComponent } from './components/home/home.component';
     SuccessStoriesComponent,
     TrustedByComponent,
     DetailsComponent,
-    HomeComponent
+    HomeComponent,
+    SolutionsComponent
   ],
   imports: [
     BrowserModule,

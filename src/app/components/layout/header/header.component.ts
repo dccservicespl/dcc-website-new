@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { NavigationService, MenuItem } from '../../../services/navigation.service';
 
@@ -7,10 +7,11 @@ import { NavigationService, MenuItem } from '../../../services/navigation.servic
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent implements OnInit, OnDestroy {
   navigation: MenuItem[] = [];
   isScrolled = false;
   isMobileMenuOpen = false;
+  openMobileSubmenus: Set<string> = new Set();
 
   constructor(
     private navigationService: NavigationService,
@@ -32,10 +33,45 @@ export class HeaderComponent implements OnInit {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+    
+    // Prevent body scroll when mobile menu is open
+    if (this.isMobileMenuOpen) {
+      document.body.classList.add('mobile-menu-open');
+    } else {
+      document.body.classList.remove('mobile-menu-open');
+      // Clear all open submenus when closing mobile menu
+      this.openMobileSubmenus.clear();
+    }
+  }
+
+  toggleMobileSubmenu(itemLabel: string): void {
+    if (this.openMobileSubmenus.has(itemLabel)) {
+      this.openMobileSubmenus.delete(itemLabel);
+    } else {
+      this.openMobileSubmenus.add(itemLabel);
+    }
+  }
+
+  isMobileSubmenuOpen(itemLabel: string): boolean {
+    return this.openMobileSubmenus.has(itemLabel);
+  }
+
+  closeMobileMenuAndNavigate(item: MenuItem, parentLabels: string[] = []): void {
+    this.isMobileMenuOpen = false;
+    document.body.classList.remove('mobile-menu-open');
+    this.openMobileSubmenus.clear();
+    this.navigateToDetails(item, parentLabels);
   }
 
   navigateToDetails(item: MenuItem, parentLabels: string[] = []): void {
-    if (item.slug) {
+    if (item.href && item.href.startsWith('/solutions#')) {
+      // Handle solutions navigation with fragment
+      window.location.href = item.href;
+    } else if (item.href && item.href.startsWith('/solutions')) {
+      // Handle direct solutions page navigation
+      this.router.navigate(['/solutions']);
+    } else if (item.slug) {
+      // Handle details navigation
       const breadcrumb = [...parentLabels, item.label].join(' > ');
       this.router.navigate(['/details', item.slug], {
         queryParams: { breadcrumb }
@@ -45,5 +81,10 @@ export class HeaderComponent implements OnInit {
 
   getBreadcrumbPath(parentLabels: string[], currentLabel: string): string {
     return [...parentLabels, currentLabel].join(' > ');
+  }
+
+  ngOnDestroy(): void {
+    // Clean up body class when component is destroyed
+    document.body.classList.remove('mobile-menu-open');
   }
 }

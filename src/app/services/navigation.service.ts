@@ -17,30 +17,31 @@ export class NavigationService {
       children: [
         {
           label: 'Solutions',
+          href: '/solutions',
           children: [
             { 
               label: 'Enterprise Resource Planning', 
-              href: '#',
+              href: '/solutions#enterprise-resource-planning',
               slug: 'enterprise-resource-planning'
             },
             {
               label: 'Customer Experience and Application Development',
-              href: '#',
+              href: '/solutions#customer-experience-and-application-development',
               slug: 'customer-experience-and-application-development'
             },
             { 
               label: 'Supply Chain Management', 
-              href: '#',
+              href: '/solutions#supply-chain-management',
               slug: 'supply-chain-management'
             },
             { 
               label: 'Customer Relationship Management', 
-              href: '#',
+              href: '/solutions#customer-relationship-management',
               slug: 'customer-relationship-management'
             },
             { 
               label: 'Security Stack', 
-              href: '#',
+              href: '/solutions#security-stack',
               slug: 'security-stack'
             },
           ],

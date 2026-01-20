@@ -1,0 +1,123 @@
+// Solutions page specific styles
+.section-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: rgba(251, 153, 2, 0.1);
+  color: #fb9902;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: 9999px;
+}
+
+.glass-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: scale(1.02);
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+// Smooth transitions for solution filtering
+.solutions-container {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.5s ease-in-out;
+}
+
+.solutions-container.filtering {
+  opacity: 0.7;
+  transform: translateY(10px);
+}
+
+// Filtered view styling
+.filtered-solution {
+  border: 2px solid rgba(251, 153, 2, 0.3);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(251, 153, 2, 0.05) 100%);
+  animation: slideInFromBottom 0.6s ease-out;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Enhanced focus state for selected solutions
+:target {
+  animation: highlightSection 2s ease-in-out;
+}
+
+@keyframes highlightSection {
+  0% {
+    background-color: rgba(251, 153, 2, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    background-color: rgba(251, 153, 2, 0.05);
+    transform: scale(1.01);
+  }
+  100% {
+    background-color: transparent;
+    transform: scale(1);
+  }
+}
+
+// Solution navigation pills styling
+.solution-nav-pills a {
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.solution-nav-pills a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+// Custom scrollbar for capabilities list
+.capabilities-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.capabilities-list::-webkit-scrollbar-track {
+  background-color: #f1f5f9;
+  border-radius: 9999px;
+}
+
+.capabilities-list::-webkit-scrollbar-thumb {
+  background-color: #fb9902;
+  border-radius: 9999px;
+}
+
+// Animation for floating accents
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(5deg);
+  }
+}
+
+.floating-accent {
+  animation: float 6s ease-in-out infinite;
+}
+
+// Breadcrumb-style navigation
+.solution-breadcrumb {
+  background: linear-gradient(135deg, rgba(251, 153, 2, 0.1) 0%, rgba(251, 153, 2, 0.05) 100%);
+  border: 1px solid rgba(251, 153, 2, 0.2);
+  backdrop-filter: blur(8px);
+}

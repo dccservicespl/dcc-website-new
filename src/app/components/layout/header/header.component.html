@@ -31,7 +31,7 @@
             <a 
               class="dropdown-item cursor-pointer"
               (click)="navigateToDetails(child, [item.label])"
-              *ngIf="child.slug"
+              *ngIf="child.slug || child.href"
             >
               {{ child.label }}
               <i
@@ -41,7 +41,7 @@
             </a>
             <span 
               class="dropdown-item"
-              *ngIf="!child.slug"
+              *ngIf="!child.slug && !child.href"
             >
               {{ child.label }}
               <i
@@ -103,10 +103,11 @@
       <!-- Mobile Menu Button -->
       <button
         id="menu-btn"
-        class="lg:hidden text-slate-800 p-2"
+        class="lg:hidden text-slate-800 p-2 transition-transform duration-300"
         (click)="toggleMobileMenu()"
+        [ngClass]="{'rotate-90': isMobileMenuOpen}"
       >
-        <i class="fas fa-bars"></i>
+        <i class="fas" [ngClass]="{'fa-bars': !isMobileMenuOpen, 'fa-times': isMobileMenuOpen}"></i>
       </button>
     </div>
   </div>
@@ -115,18 +116,115 @@
 <!-- Mobile Menu -->
 <div
   id="mobile-menu"
-  class="fixed inset-0 z-[60] bg-white flex-col p-8 lg:hidden"
+  class="fixed inset-0 z-[60] bg-white flex-col lg:hidden overflow-y-auto"
   [ngClass]="{ hidden: !isMobileMenuOpen, flex: isMobileMenuOpen }"
 >
-  <div class="flex justify-between items-center mb-10">
-    <span class="font-black">MENU</span>
-    <button id="close-btn" class="text-2xl" (click)="toggleMobileMenu()">
+  <div class="flex justify-between items-center p-6 border-b border-slate-200 bg-white sticky top-0">
+    <div class="flex items-center space-x-3">
+      <img src="assets/images/logo.png" width="120" />
+    </div>
+    <button id="close-btn" class="text-2xl text-slate-600 hover:text-brand" (click)="toggleMobileMenu()">
       <i class="fas fa-times"></i>
     </button>
   </div>
-  <div class="flex flex-col space-y-6">
-    <a href="#" class="text-xl font-bold" *ngFor="let item of navigation">{{
-      item.label
-    }}</a>
+  
+  <div class="flex-1 p-6">
+    <div class="space-y-2" *ngFor="let item of navigation">
+      <!-- Top Level Item -->
+      <div class="border-b border-slate-100 pb-2">
+        <div 
+          class="flex items-center justify-between py-3 text-lg font-bold text-slate-800 cursor-pointer"
+          (click)="toggleMobileSubmenu(item.label)"
+          *ngIf="item.children; else noChildrenTemplate"
+        >
+          <span>{{ item.label }}</span>
+          <i 
+            class="fas fa-chevron-down transition-transform duration-300"
+            [ngClass]="{'rotate-180': isMobileSubmenuOpen(item.label)}"
+          ></i>
+        </div>
+        <ng-template #noChildrenTemplate>
+          <div class="py-3 text-lg font-bold text-slate-800">
+            {{ item.label }}
+          </div>
+        </ng-template>
+        
+        <!-- First Level Children -->
+        <div 
+          class="ml-4 space-y-1 overflow-hidden transition-all duration-300"
+          [ngClass]="{
+            'max-h-0 opacity-0': !isMobileSubmenuOpen(item.label),
+            'max-h-[2000px] opacity-100': isMobileSubmenuOpen(item.label)
+          }"
+          *ngIf="item.children"
+        >
+          <div *ngFor="let child of item.children" class="border-l-2 border-slate-200 pl-4 py-1">
+            <!-- Child Item with Sub-children -->
+            <div *ngIf="child.children; else childNoSubMenu">
+              <div 
+                class="flex items-center justify-between py-2 text-base font-semibold text-slate-700 cursor-pointer"
+                (click)="toggleMobileSubmenu(child.label)"
+              >
+                <span>{{ child.label }}</span>
+                <i 
+                  class="fas fa-chevron-down transition-transform duration-300 text-sm"
+                  [ngClass]="{'rotate-180': isMobileSubmenuOpen(child.label)}"
+                ></i>
+              </div>
+              
+              <!-- Second Level Children (Grandchildren) -->
+              <div 
+                class="ml-4 space-y-1 overflow-hidden transition-all duration-300"
+                [ngClass]="{
+                  'max-h-0 opacity-0': !isMobileSubmenuOpen(child.label),
+                  'max-h-[1000px] opacity-100': isMobileSubmenuOpen(child.label)
+                }"
+              >
+                <div 
+                  *ngFor="let grandchild of child.children"
+                  class="border-l-2 border-brand/30 pl-4 py-2"
+                >
+                  <a
+                    class="block text-sm text-slate-600 hover:text-brand cursor-pointer font-medium"
+                    (click)="closeMobileMenuAndNavigate(grandchild, [item.label, child.label])"
+                  >
+                    {{ grandchild.label }}
+                  </a>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Child Item without Sub-children -->
+            <ng-template #childNoSubMenu>
+              <a
+                class="block py-2 text-base font-semibold text-slate-700 hover:text-brand cursor-pointer"
+                (click)="closeMobileMenuAndNavigate(child, [item.label])"
+                *ngIf="child.slug || child.href"
+              >
+                {{ child.label }}
+              </a>
+              <div 
+                class="py-2 text-base font-semibold text-slate-700"
+                *ngIf="!child.slug && !child.href"
+              >
+                {{ child.label }}
+              </div>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Mobile Contact Section -->
+    <div class="mt-8 pt-6 border-t border-slate-200">
+      <a
+        href="#contact"
+        class="flex items-center justify-center bg-brand text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-brand-dark transition-all"
+        (click)="isMobileMenuOpen = false"
+      >
+        <i class="fas fa-phone mr-2"></i>
+        Contact Us
+      </a>
+    </div>
   </div>
 </div>

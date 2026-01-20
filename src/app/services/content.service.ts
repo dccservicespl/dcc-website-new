@@ -40,6 +40,18 @@ export interface DetailContent {
   industries: { name: string; icon: string }[];
 }
 
+export interface SolutionCard {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  color: string;
+  image: string;
+  capabilities: string[];
+  outcomes: string[];
+  stats?: { value: string; label: string }[];
+}
+
 @Injectable({
   providedIn: 'root',
 })
@@ -512,6 +524,141 @@ export class ContentService {
       { name: 'Retail', icon: 'fas fa-store' },
       { name: 'Healthcare', icon: 'fas fa-heartbeat' },
       { name: 'Finance', icon: 'fas fa-university' }
+    ];
+  }
+
+  getSolutions(): SolutionCard[] {
+    return [
+      {
+        title: 'Enterprise Resource Planning (ERP)',
+        subtitle: 'Modernize, Integrate, and Scale Your Core Business Systems',
+        description: 'DCC is in the business of helping companies like yours revamp their core operations. We do this with ERP solutions that are not only robust and scalable but also future-ready. We have a deep understanding of both SAP and Microsoft ecosystems. We empower organizations to streamline their finance, operations, HR, and supply chain processes while maintaining compliance and control.',
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800',
+        capabilities: [
+          'SAP ECC & S/4HANA (Greenfield & Brownfield)',
+          'Microsoft Dynamics 365 (Finance, Supply Chain, Business Central)',
+          'ERP Upgrades & Migrations',
+          'Custom Enhancements & Integrations',
+          'Reporting, Analytics & Automation',
+          'Ongoing AMS & Managed Services'
+        ],
+        outcomes: [
+          'Improved operational visibility',
+          'Faster financial close',
+          'Reduced manual processes',
+          'Scalable enterprise architecture'
+        ],
+        stats: [
+          { value: '95%', label: 'Implementation Success Rate' },
+          { value: '40%', label: 'Process Efficiency Gain' }
+        ]
+      },
+      {
+        title: 'Customer Experience & Application Development',
+        subtitle: 'Build Intelligent, User-Centric Digital Experiences',
+        description: 'We\'re all about designing and developing secure, scalable, and high-performance applications that boost customer engagement and empower your internal teams. From enterprise portals to mobile and cloud-native applications, DCC delivers solutions that combine usability, performance, and business intelligence.',
+        icon: 'fas fa-mobile-alt',
+        color: 'orange',
+        image: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?auto=format&fit=crop&w=800',
+        capabilities: [
+          'Web & Mobile Application Development',
+          'Cloud-Native & Microservices Architecture',
+          'UX/UI Design & Prototyping',
+          'Low-Code / No-Code Platforms',
+          'API & ERP/CRM Integrations',
+          'Application Modernization'
+        ],
+        outcomes: [
+          'Enhanced customer engagement',
+          'Faster time-to-market',
+          'Improved user productivity',
+          'Secure and scalable applications'
+        ],
+        stats: [
+          { value: '60%', label: 'Faster Development Cycles' },
+          { value: '85%', label: 'User Satisfaction Rate' }
+        ]
+      },
+      {
+        title: 'Supply Chain Management',
+        subtitle: 'Gain Real-Time Visibility and Control Across Your Supply Chain',
+        description: 'DCC provides end-to-end supply chain solutions that boost visibility, efficiency, and compliance across procurement, inventory, logistics, and distribution. Our industry-focused solutions help organizations react faster to demand shifts, cut costs, and ensure they\'re meeting all the regulatory requirements.',
+        icon: 'fas fa-shipping-fast',
+        color: 'green',
+        image: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?auto=format&fit=crop&w=800',
+        capabilities: [
+          'Supply Chain Planning & Optimization',
+          'Warehouse & Inventory Management',
+          'Traceability & Compliance (FSMA, Lot Tracking)',
+          'Demand Forecasting & Analytics',
+          'Automation & Workflow Optimization',
+          'ERP-Integrated Supply Chain Solutions'
+        ],
+        outcomes: [
+          'Reduced inventory costs',
+          'Improved order fulfillment',
+          'Enhanced compliance & traceability',
+          'Data-driven decision making'
+        ],
+        stats: [
+          { value: '30%', label: 'Inventory Cost Reduction' },
+          { value: '99%', label: 'Order Accuracy Rate' }
+        ]
+      },
+      {
+        title: 'Customer Relationship Management (CRM)',
+        subtitle: 'Strengthen Customer Relationships with Intelligent CRM Solutions',
+        description: 'DCC helps organizations bring together their sales, marketing, and service operations using powerful CRM platforms. These platforms give you a 360-degree view of your customer, enabling personalized engagement, better pipeline visibility, and measurable growth.',
+        icon: 'fas fa-users',
+        color: 'red',
+        image: 'https://images.unsplash.com/photo-1553484771-371a605b060b?auto=format&fit=crop&w=800',
+        capabilities: [
+          'Salesforce CRM Implementation',
+          'Microsoft Dynamics 365 CRM',
+          'Sales, Marketing & Service Automation',
+          'Customer Data Integration',
+          'Analytics & Performance Dashboards',
+          'CRM Enhancements & Support'
+        ],
+        outcomes: [
+          'Increased sales effectiveness',
+          'Improved customer satisfaction',
+          'Better pipeline visibility',
+          'Data-driven customer insights'
+        ],
+        stats: [
+          { value: '35%', label: 'Sales Growth' },
+          { value: '90%', label: 'Customer Retention Rate' }
+        ]
+      },
+      {
+        title: 'Security Stack',
+        subtitle: 'Secure Your Enterprise in a Rapidly Evolving Threat Landscape',
+        description: 'DCC offers a comprehensive security stack to protect your enterprise systems, applications, data, and users. Our layered security approach brings together governance, technology, and continuous monitoring to reduce risk and ensure compliance.',
+        icon: 'fas fa-shield-alt',
+        color: 'purple',
+        image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?auto=format&fit=crop&w=800',
+        capabilities: [
+          'Security Assessments & VAPT',
+          'Identity & Access Management (IAM)',
+          'Cloud & Infrastructure Security',
+          'Network & Endpoint Protection',
+          'Compliance & Risk Management',
+          'Security Monitoring & Incident Response'
+        ],
+        outcomes: [
+          'Reduced security risk',
+          'Improved regulatory compliance',
+          'Secure digital transformation',
+          'Increased organizational resilience'
+        ],
+        stats: [
+          { value: '99.9%', label: 'Threat Detection Rate' },
+          { value: '24/7', label: 'Security Monitoring' }
+        ]
+      }
     ];
   }
 }
