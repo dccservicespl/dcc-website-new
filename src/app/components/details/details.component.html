@@ -70,7 +70,9 @@
       </div>
 
       <!-- Content Card -->
-      <div class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden">
+      <div
+        class="bg-white rounded-3xl shadow-xl border border-slate-100 overflow-hidden"
+      >
         <!-- Hero Image (if available) -->
         <div *ngIf="content.image" class="h-32 md:h-40 bg-gradient-to-r from-brand to-orange-500 relative overflow-hidden">
           <img 
@@ -78,6 +80,10 @@
             [alt]="title" 
             class="w-full h-full object-cover"
             *ngIf="content.image !== 'placeholder'"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-brand/80 to-orange-500/80 flex items-center justify-center"
+            *ngIf="content.image === 'placeholder' || !content.image"
           >
           <div class="absolute inset-0 bg-gradient-to-r from-brand/80 to-orange-500/80 flex items-center justify-center" 
                *ngIf="content.image === 'placeholder' || !content.image">
