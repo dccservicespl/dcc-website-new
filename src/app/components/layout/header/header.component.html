@@ -7,11 +7,10 @@
     class="max-w-7xl mx-auto px-6 w-full flex justify-between items-center h-full"
   >
     <!-- Logo -->
-    <div
-      class="flex items-center space-x-3 cursor-pointer"
-      (click)="scrollToTop()"
-    >
-      <img src="assets/images/logo.png" width="150" />
+    <div class="flex items-center space-x-3 cursor-pointer">
+      <a [routerLink]="['/']">
+        <img src="assets/images/logo.png" width="150"
+      /></a>
     </div>
 
     <!-- Desktop Navigation -->
@@ -28,7 +27,7 @@
         </span>
         <div class="dropdown-content" *ngIf="item.children">
           <div class="submenu" *ngFor="let child of item.children">
-            <a 
+            <a
               class="dropdown-item cursor-pointer"
               (click)="navigateToDetails(child, [item.label])"
               *ngIf="child.slug || child.href"
@@ -39,10 +38,7 @@
                 *ngIf="child.children"
               ></i>
             </a>
-            <span 
-              class="dropdown-item"
-              *ngIf="!child.slug && !child.href"
-            >
+            <span class="dropdown-item" *ngIf="!child.slug && !child.href">
               {{ child.label }}
               <i
                 class="fas fa-chevron-right text-[10px]"
@@ -52,7 +48,9 @@
             <div class="submenu-content" *ngIf="child.children">
               <a
                 class="dropdown-item cursor-pointer"
-                (click)="navigateToDetails(grandchild, [item.label, child.label])"
+                (click)="
+                  navigateToDetails(grandchild, [item.label, child.label])
+                "
                 *ngFor="let grandchild of child.children"
               >
                 {{ grandchild.label }}
@@ -105,9 +103,15 @@
         id="menu-btn"
         class="lg:hidden text-slate-800 p-2 transition-transform duration-300"
         (click)="toggleMobileMenu()"
-        [ngClass]="{'rotate-90': isMobileMenuOpen}"
+        [ngClass]="{ 'rotate-90': isMobileMenuOpen }"
       >
-        <i class="fas" [ngClass]="{'fa-bars': !isMobileMenuOpen, 'fa-times': isMobileMenuOpen}"></i>
+        <i
+          class="fas"
+          [ngClass]="{
+            'fa-bars': !isMobileMenuOpen,
+            'fa-times': isMobileMenuOpen,
+          }"
+        ></i>
       </button>
     </div>
   </div>
@@ -119,28 +123,34 @@
   class="fixed inset-0 z-[60] bg-white flex-col lg:hidden overflow-y-auto"
   [ngClass]="{ hidden: !isMobileMenuOpen, flex: isMobileMenuOpen }"
 >
-  <div class="flex justify-between items-center p-6 border-b border-slate-200 bg-white sticky top-0">
+  <div
+    class="flex justify-between items-center p-6 border-b border-slate-200 bg-white sticky top-0"
+  >
     <div class="flex items-center space-x-3">
       <img src="assets/images/logo.png" width="120" />
     </div>
-    <button id="close-btn" class="text-2xl text-slate-600 hover:text-brand" (click)="toggleMobileMenu()">
+    <button
+      id="close-btn"
+      class="text-2xl text-slate-600 hover:text-brand"
+      (click)="toggleMobileMenu()"
+    >
       <i class="fas fa-times"></i>
     </button>
   </div>
-  
+
   <div class="flex-1 p-6">
     <div class="space-y-2" *ngFor="let item of navigation">
       <!-- Top Level Item -->
       <div class="border-b border-slate-100 pb-2">
-        <div 
+        <div
           class="flex items-center justify-between py-3 text-lg font-bold text-slate-800 cursor-pointer"
           (click)="toggleMobileSubmenu(item.label)"
           *ngIf="item.children; else noChildrenTemplate"
         >
           <span>{{ item.label }}</span>
-          <i 
+          <i
             class="fas fa-chevron-down transition-transform duration-300"
-            [ngClass]="{'rotate-180': isMobileSubmenuOpen(item.label)}"
+            [ngClass]="{ 'rotate-180': isMobileSubmenuOpen(item.label) }"
           ></i>
         </div>
         <ng-template #noChildrenTemplate>
@@ -148,52 +158,62 @@
             {{ item.label }}
           </div>
         </ng-template>
-        
+
         <!-- First Level Children -->
-        <div 
+        <div
           class="ml-4 space-y-1 overflow-hidden transition-all duration-300"
           [ngClass]="{
             'max-h-0 opacity-0': !isMobileSubmenuOpen(item.label),
-            'max-h-[2000px] opacity-100': isMobileSubmenuOpen(item.label)
+            'max-h-[2000px] opacity-100': isMobileSubmenuOpen(item.label),
           }"
           *ngIf="item.children"
         >
-          <div *ngFor="let child of item.children" class="border-l-2 border-slate-200 pl-4 py-1">
+          <div
+            *ngFor="let child of item.children"
+            class="border-l-2 border-slate-200 pl-4 py-1"
+          >
             <!-- Child Item with Sub-children -->
             <div *ngIf="child.children; else childNoSubMenu">
-              <div 
+              <div
                 class="flex items-center justify-between py-2 text-base font-semibold text-slate-700 cursor-pointer"
                 (click)="toggleMobileSubmenu(child.label)"
               >
                 <span>{{ child.label }}</span>
-                <i 
+                <i
                   class="fas fa-chevron-down transition-transform duration-300 text-sm"
-                  [ngClass]="{'rotate-180': isMobileSubmenuOpen(child.label)}"
+                  [ngClass]="{ 'rotate-180': isMobileSubmenuOpen(child.label) }"
                 ></i>
               </div>
-              
+
               <!-- Second Level Children (Grandchildren) -->
-              <div 
+              <div
                 class="ml-4 space-y-1 overflow-hidden transition-all duration-300"
                 [ngClass]="{
                   'max-h-0 opacity-0': !isMobileSubmenuOpen(child.label),
-                  'max-h-[1000px] opacity-100': isMobileSubmenuOpen(child.label)
+                  'max-h-[1000px] opacity-100': isMobileSubmenuOpen(
+                    child.label
+                  ),
                 }"
               >
-                <div 
+                <div
                   *ngFor="let grandchild of child.children"
                   class="border-l-2 border-brand/30 pl-4 py-2"
                 >
                   <a
                     class="block text-sm text-slate-600 hover:text-brand cursor-pointer font-medium"
-                    (click)="closeMobileMenuAndNavigate(grandchild, [item.label, child.label])"
+                    (click)="
+                      closeMobileMenuAndNavigate(grandchild, [
+                        item.label,
+                        child.label,
+                      ])
+                    "
                   >
                     {{ grandchild.label }}
                   </a>
                 </div>
               </div>
             </div>
-            
+
             <!-- Child Item without Sub-children -->
             <ng-template #childNoSubMenu>
               <a
@@ -203,7 +223,7 @@
               >
                 {{ child.label }}
               </a>
-              <div 
+              <div
                 class="py-2 text-base font-semibold text-slate-700"
                 *ngIf="!child.slug && !child.href"
               >
@@ -214,7 +234,7 @@
         </div>
       </div>
     </div>
-    
+
     <!-- Mobile Contact Section -->
     <div class="mt-8 pt-6 border-t border-slate-200">
       <a
