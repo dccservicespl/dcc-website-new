@@ -14,6 +14,8 @@ import { TrustedByComponent } from './components/home/trusted-by/trusted-by.comp
 import { DetailsComponent } from './components/details/details.component';
 import { HomeComponent } from './components/home/home.component';
 import { SolutionsComponent } from './components/solutions/solutions.component';
+import { IndustriesComponent } from './components/industries/industries/industries.component';
+import { TechnologiesComponent } from './components/technologies/technologies/technologies.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,10 @@ import { SolutionsComponent } from './components/solutions/solutions.component';
     TrustedByComponent,
     DetailsComponent,
     HomeComponent,
-    SolutionsComponent
+    SolutionsComponent,
+    IndustriesComponent,
+    TechnologiesComponent,
+
   ],
   imports: [
     BrowserModule,

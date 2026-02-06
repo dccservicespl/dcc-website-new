@@ -52,6 +52,41 @@ export interface SolutionCard {
   stats?: { value: string; label: string }[];
 }
 
+export interface ServicesCard {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  color: string;
+  image: string;
+  capabilities: string[];
+  outcomes: string[];
+  stats?: { value: string; label: string }[];
+}
+
+export interface IndustryCard {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  color: string;
+  image: string;
+  capabilities: string[];
+  outcomes: string[];
+  stats?: { value: string; label: string }[];
+}
+export interface TechnologyCard {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  color: string;
+  image: string;
+  capabilities: string[];
+  stats?: { value: string; label: string }[];
+}
+
+
 @Injectable({
   providedIn: 'root',
 })
@@ -549,7 +584,7 @@ export class ContentService {
     },
   };
 
-  constructor() {}
+  constructor() { }
 
   getCompanyStats(): CompanyStats[] {
     return this.companyStats;
@@ -797,4 +832,294 @@ export class ContentService {
       },
     ];
   }
+
+  getServices(): ServicesCard[] {
+    return [
+      {
+        title: 'Change Management',
+        subtitle: 'Enable Adoption, Minimize Risk, and Drive Business Value',
+        description: `Tech transformation only works if people actually use it. DCC's Change Management services make sure that new systems, processes, and ways of working are embraced across the organization.
+We focus on clear communication, training, and getting everyone on board to reduce disruption and speed up user adoption.
+`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'Organizational Change Strategy',
+          'Stakeholder & Impact Analysis',
+          'Communication Planning',
+          'End-User Training & Enablement',
+          'Adoption & Readiness Assessments'
+
+        ],
+        outcomes: [
+          'Faster user adoption',
+          'Reduced operational disruption',
+          'Improved ROI on technology investments'
+
+        ],
+
+      },
+
+      {
+        title: 'Cloud Migration and Architecture',
+        subtitle: 'Secure, Scalable, and Cost-Effective Cloud Transformation',
+        description: `DCC helps organizations plan, design, and carry out cloud migrations that align with their business goals, security needs, and compliance standards. Our cloud architects ensure a smooth move from on-premise environments to modern cloud platforms.`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'Cloud Readiness Assessment',
+          'Migration Strategy & Planning',
+          'Azure & Hybrid Cloud Architecture',
+          'Application & Data Migration',
+          'Security & Governance Frameworks',
+
+
+        ],
+        outcomes: [
+          'Improved scalability and agility',
+          'Optimized infrastructure costs',
+          'Enhanced security and resilience'
+
+
+        ],
+
+      },
+
+    ];
+  }
+
+
+  getIndustries(): IndustryCard[] {
+    return [
+      {
+        title: 'Manufacturing',
+        subtitle: 'Enabling Operational Excellence Through Integrated Technology',
+        description: `DCC partners with manufacturers to modernize operations, improve production efficiency, and gain real-time visibility across the enterprise. Our solutions support discrete and process manufacturing environments by integrating ERP, analytics, and operational systems.
+We help manufacturers respond to market demand, control costs, and improve profitability through data-driven decision making.
+`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'ERP for manufacturing operations',
+          'Production planning & scheduling',
+          'Inventory & materials management',
+          'Cost accounting & margin analysis',
+          'Shop floor & system integration',
+          'Reporting & operational analytics',
+        ],
+        outcomes: [
+          'Improved production efficiency',
+          'Enhanced regulatory compliance',
+          'Accurate financial tracking',
+          'Better margin visibility',
+        ],
+
+      },
+      {
+        title: 'Recycling',
+        subtitle: 'Driving Efficiency, Compliance, and Visibility in Recycling Operations',
+        description: `DCC delivers technology solutions tailored to the unique challenges of the recycling industry, including fluctuating commodity pricing, complex logistics, and regulatory compliance.
+Our solutions integrate finance, operations, inventory, and analytics to help recycling organizations operate efficiently and scale with confidence.`,
+        icon: 'fas fa-mobile-alt',
+        color: 'orange',
+        image: 'assets/images/Experience_Application.jpg',
+        capabilities: [
+          'ERP & financial management',
+          'Inventory & materials tracking',
+          'Pricing & settlement management',
+          'Compliance & reporting',
+          'Analytics & performance dashboards',
+        ],
+        outcomes: [
+          'Improved production efficiency',
+          'Reduced operational costs',
+          'Better demand forecasting',
+          'Increased operational visibility',
+        ],
+
+      },
+      {
+        title: 'Produce Market',
+        subtitle:
+          'Supporting Fast-Moving, Compliance-Driven Produce Operations',
+        description: `DCC has deep expertise in the produce industry and understands the operational realities of perishability, traceability, and regulatory requirements. Our solutions are designed to support end-to-end operations—from grower procurement to distribution and retail delivery`,
+        icon: 'fas fa-shipping-fast',
+        color: 'green',
+        image: 'assets/images/Supply-Chain.jpg',
+        capabilities: [
+          'Lot & batch traceability',
+          'FSMA compliance & reporting',
+          'Inventory aging & spoilage control',
+          'Order management & fulfillment',
+          'Pricing, settlements & analytics'
+        ],
+        outcomes: [
+          'Enhanced traceability & compliance',
+          'Reduced waste & spoilage',
+          'Faster order fulfillment',
+          'Improved operational visibility',
+        ],
+
+      },
+      {
+        title: 'Grocery & Retail',
+        subtitle:
+          'Powering Scalable, Data-Driven Retail Operations',
+        description: `DCC helps grocery and retail organizations streamline operations across stores, distribution centers, and corporate functions. Our solutions integrate ERP, analytics, and customer systems to support growth, profitability, and customer satisfaction.`,
+        icon: 'fas fa-users',
+        color: 'red',
+        image: 'assets/images/CRM.jpg',
+        capabilities: [
+          'ERP for multi-location retail',
+          'Inventory & supply chain optimization',
+          'Financial consolidation & reporting',
+          'POS & system integration',
+          'Analytics & demand forecasting'
+
+        ],
+        outcomes: [
+          'Improved inventory accuracy',
+          'Reduced stockouts & overstocks',
+          'Better financial visibility',
+          'Scalable retail operations',
+        ],
+
+      }
+
+    ];
+  }
+
+  getTechnologies(): TechnologyCard[] {
+    return [
+      {
+        title: 'Enterprise Platforms - SAP',
+        subtitle: 'SAP',
+        description: `We deliver end-to-end SAP services, including implementation, upgrades, migrations, and support for ECC, S/4HANA, and SuccessFactors.`,
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+        capabilities: [
+          'SAP ECC & S/4HANA',
+          'Finance, Supply Chain & HR',
+          'Migrations & upgrades',
+          'Enhancements & integrations',
+          'AMS & ongoing support',
+        ],
+
+      },
+      {
+        title: 'Enterprise Platforms - Microsoft',
+        subtitle: 'Microsoft',
+        description: `DCC is a trusted Microsoft partner delivering solutions across Dynamics 365, Azure, Power BI, and Microsoft 365.`,
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+        capabilities: [
+          'Dynamics 365 (Finance, Supply Chain, CRM)',
+          'Azure cloud & hybrid architecture',
+          'Power BI analytics & reporting',
+          'Microsoft 365 & collaboration tools',
+        ],
+
+      },
+
+      {
+        title: 'Enterprise Platforms - Salesforce',
+        subtitle: 'Salesforce',
+        description: `We help organizations implement and optimize Salesforce to improve sales performance, customer engagement, and service delivery.`,
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+        capabilities: [
+          'Sales, Service & Marketing Clouds',
+          'CRM customization & integration',
+          'Analytics & dashboards',
+          'Ongoing enhancements & support',
+        ],
+
+      },
+      {
+        title: 'Cloud & Infrastructure',
+        subtitle: 'Cloud & Hybrid Environments',
+        description: `We design and manage secure, scalable cloud and hybrid infrastructures aligned with business and compliance needs.`,
+        icon: 'fas fa-mobile-alt',
+        color: 'orange',
+        image: 'assets/images/Experience_Application.jpg',
+        capabilities: [
+          'Cloud architecture & migration',
+          'Hybrid & multi-cloud environments',
+          'Infrastructure optimization',
+          'Security & governance',
+
+        ],
+
+      },
+      {
+        title: 'Data, Analytics & AI',
+        subtitle:
+          'Turning Enterprise Data into Actionable Intelligence',
+        description: `DCC enables organizations to unlock the full value of their data through enterprise analytics and AI-enabled insights.`,
+        icon: 'fas fa-shipping-fast',
+        color: 'green',
+        image: 'assets/images/Supply-Chain.jpg',
+        capabilities: [
+          'Data strategy & architecture',
+          'Power BI & enterprise reporting',
+          'Data integration & warehousing',
+          'Predictive analytics & forecasting',
+          'Gen-AI & intelligent automation'
+        ],
+
+      },
+      {
+        title: 'Application Development & Integration',
+        subtitle:
+          'Building and Connecting Enterprise Systems',
+        description: `We design, build, and integrate applications that support business operations and improve user productivity.`,
+        icon: 'fas fa-users',
+        color: 'red',
+        image: 'assets/images/CRM.jpg',
+        capabilities: [
+          'Custom application development',
+          'ERP & CRM integrations',
+          'API & middleware solutions',
+          'Application modernization',
+
+        ],
+
+      },
+      {
+        title: 'Cybersecurity & Compliance',
+        subtitle:
+          'Securing Enterprise Systems and Data',
+        description: `DCC provides a layered security approach to protect applications, infrastructure, and data while meeting regulatory requirements.`,
+        icon: 'fas fa-users',
+        color: 'red',
+        image: 'assets/images/CRM.jpg',
+        capabilities: [
+          'Identity & access management',
+          'Network & endpoint security',
+          'Cloud security',
+          'Compliance & risk management',
+          'Security assessments & monitoring',
+
+        ],
+
+      }
+
+
+    ];
+  }
+
+
+
 }

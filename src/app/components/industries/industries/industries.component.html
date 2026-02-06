@@ -1,0 +1,159 @@
+<section class="py-20 bg-white/40">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Header Section -->
+        <div class="text-center mb-16 mt-2">
+            <!-- <span class="section-tag mb-4">Our industries</span> -->
+            <h1 class="text-5xl font-black text-slate-900 mb-6">
+                Manufacturing industries That <span class="text-brand">Drive Growth</span>
+            </h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                DCC delivers comprehensive manufacturing industries that modernize
+                operations, enhance customer experiences, and secure your digital
+                transformation journey.
+            </p>
+
+            <!-- Show All industries Button (when filtered) -->
+            <div class="mt-8" *ngIf="selectedIndustrySlug">
+                <div class="flex flex-wrap justify-center gap-4 mb-4">
+                    <button (click)="showAllIndustries()"
+                        class="inline-flex items-center px-6 py-3 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold rounded-xl transition-all duration-300">
+                        <i class="fas fa-grid-2 mr-2"></i>
+                        View All Industries
+                    </button>
+                </div>
+
+                <!-- industry Navigation Pills -->
+                <div class="industry-nav-pills flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+                    <ng-container *ngFor="let industry of industries">
+                        <a [href]="'/industries#' + getIndustryId(industry)"
+                            class="px-4 py-2 rounded-full text-xs font-medium transition-all duration-300" [ngClass]="{
+                'bg-brand text-white':
+                  getIndustryId(industry) === selectedIndustrySlug,
+                'bg-slate-100 text-slate-600 hover:bg-slate-200':
+                  getIndustryId(industry) !== selectedIndustrySlug,
+              }">
+                            {{ industry.title.split("(")[0].trim() }}
+                        </a>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+        <!-- industrys Grid -->
+        <div class="industrys-container space-y-20">
+            <div *ngFor="let industry of filteredIndustries; let i = index"
+                class="grid lg:grid-cols-12 gap-12 items-center filtered-industry rounded-[1rem] p-5"
+                [ngClass]="{ 'lg:grid-flow-col-dense': i % 2 === 1 }" [id]="getIndustryId(industry)">
+                <!-- Content Side -->
+                <div class="lg:col-span-6" [ngClass]="{ 'lg:col-start-7': i % 2 === 1 }">
+                    <div class="glass-card p-8 rounded-[2rem] h-full">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6 shadow-inner" [ngClass]="{
+                'bg-blue-50 text-blue-500': industry.color === 'blue',
+                'bg-orange-50 text-orange-500': industry.color === 'orange',
+                'bg-red-50 text-red-500': industry.color === 'red',
+                'bg-green-50 text-green-500': industry.color === 'green',
+                'bg-purple-50 text-purple-500': industry.color === 'purple',
+              }">
+                            <i [class]="industry.icon + ' text-xl'"></i>
+                        </div>
+                        <h2 class="text-2xl font-black text-slate-900 mb-3">
+                            {{ industry.title }}
+                        </h2>
+                        <p class="text-brand font-semibold text-sm mb-4">
+                            {{ industry.subtitle }}
+                        </p>
+                        <p class="text-slate-600 leading-relaxed mb-6">
+                            {{ industry.description }}
+                        </p>
+
+                        <!-- Key Capabilities -->
+                        <div class="mb-6">
+                            <h3 class="font-bold text-slate-900 mb-3">Key Focus Areas</h3>
+                            <div class="grid grid-cols-1 gap-2">
+                                <div *ngFor="let capability of industry.capabilities"
+                                    class="flex items-center text-sm text-slate-600">
+                                    <div class="w-1.5 h-1.5 bg-brand rounded-full mr-3 flex-shrink-0"></div>
+                                    {{ capability }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Outcomes -->
+                        <div>
+                            <h3 class="font-bold text-slate-900 mb-3">Business Outcomes</h3>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div *ngFor="let outcome of industry.outcomes"
+                                    class="bg-slate-50/50 rounded-lg p-3 border border-slate-100">
+                                    <div class="text-xs text-slate-600">{{ outcome }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Side -->
+                <div class="lg:col-span-6" [ngClass]="{ 'lg:col-start-1 lg:row-start-1': i % 2 === 1 }">
+                    <div class="relative">
+                        <div class="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl">
+                            <img [src]="industry.image" [alt]="industry.title" class="w-full h-full object-cover" />
+                            <!-- Overlay with stats -->
+                            <!-- <div
+                                class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent flex items-end p-8 rounded-[2rem]">
+                                <div class="grid grid-cols-2 gap-6 w-full" *ngIf="industry.stats">
+                                    <div *ngFor="let stat of industry.stats" class="text-white">
+                                        <div class="text-2xl font-black">{{ stat.value }}</div>
+                                        <div class="text-xs opacity-80">{{ stat.label }}</div>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+
+                        <!-- Floating accent -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full opacity-20 blur-xl" [ngClass]="{
+                'bg-blue-500': industry.color === 'blue',
+                'bg-orange-500': industry.color === 'orange',
+                'bg-red-500': industry.color === 'red',
+                'bg-green-500': industry.color === 'green',
+                'bg-purple-500': industry.color === 'purple',
+              }"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- No industries Found Message -->
+        <div *ngIf="filteredIndustries.length === 0" class="text-center py-12">
+            <div class="glass-card p-12 rounded-[3rem] max-w-2xl mx-auto">
+                <i class="fas fa-search text-4xl text-slate-400 mb-4"></i>
+                <h3 class="text-2xl font-black text-slate-900 mb-4">
+                    No industries Found
+                </h3>
+                <p class="text-slate-600 mb-6">
+                    The industry you're looking for doesn't exist or may have been moved.
+                </p>
+                <button (click)="showAllIndustries()"
+                    class="bg-brand hover:bg-brand-dark text-white font-bold px-6 py-3 rounded-xl transition-all duration-300">
+                    View All industries
+                </button>
+            </div>
+        </div>
+
+        <!-- CTA Section (only show when viewing all industries) -->
+        <div class="mt-20 text-center" *ngIf="!selectedIndustrySlug">
+            <div class="glass-card p-12 rounded-[3rem] max-w-4xl mx-auto">
+                <h2 class="text-3xl font-black text-slate-900 mb-4">
+                    Ready to Transform Your Business?
+                </h2>
+                <p class="text-slate-600 mb-8 text-lg leading-relaxed">
+                    Let's discuss how our industries can modernize your operations and
+                    drive measurable growth.
+                </p>
+                <button
+                    class="bg-brand hover:bg-brand-dark text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    Schedule a Consultation
+                </button>
+            </div>
+        </div>
+    </div>
+</section>

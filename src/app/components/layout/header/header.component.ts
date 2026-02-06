@@ -33,7 +33,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
-    
+
     // Prevent body scroll when mobile menu is open
     if (this.isMobileMenuOpen) {
       document.body.classList.add('mobile-menu-open');
@@ -70,7 +70,23 @@ export class HeaderComponent implements OnInit, OnDestroy {
     } else if (item.href && item.href.startsWith('/solutions')) {
       // Handle direct solutions page navigation
       this.router.navigate(['/solutions']);
-    } else if (item.slug) {
+    }
+
+    if (item.href && item.href.startsWith('/industries#')) {
+      // Handle industries navigation with fragment
+      window.location.href = item.href;
+    } else if (item.href && item.href.startsWith('/industries')) {
+      // Handle direct industries page navigation
+      this.router.navigate(['/industries']);
+    }
+    if (item.href && item.href.startsWith('/technologies#')) {
+      // Handle industries navigation with fragment
+      window.location.href = item.href;
+    } else if (item.href && item.href.startsWith('/technologies')) {
+      // Handle direct industries page navigation
+      this.router.navigate(['/technologies']);
+    }
+    else if (item.slug) {
       // Handle details navigation
       const breadcrumb = [...parentLabels, item.label].join(' > ');
       this.router.navigate(['/details', item.slug], {

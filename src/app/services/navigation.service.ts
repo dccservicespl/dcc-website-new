@@ -19,8 +19,8 @@ export class NavigationService {
           label: 'Solutions',
           href: '/solutions',
           children: [
-            { 
-              label: 'Enterprise Resource Planning', 
+            {
+              label: 'Enterprise Resource Planning',
               href: '/solutions#enterprise-resource-planning',
               slug: 'enterprise-resource-planning'
             },
@@ -29,18 +29,18 @@ export class NavigationService {
               href: '/solutions#customer-experience-and-application-development',
               slug: 'customer-experience-and-application-development'
             },
-            { 
-              label: 'Supply Chain Management', 
+            {
+              label: 'Supply Chain Management',
               href: '/solutions#supply-chain-management',
               slug: 'supply-chain-management'
             },
-            { 
-              label: 'Customer Relationship Management', 
+            {
+              label: 'Customer Relationship Management',
               href: '/solutions#customer-relationship-management',
               slug: 'customer-relationship-management'
             },
-            { 
-              label: 'Security Stack', 
+            {
+              label: 'Security Stack',
               href: '/solutions#security-stack',
               slug: 'security-stack'
             },
@@ -48,107 +48,136 @@ export class NavigationService {
         },
         {
           label: 'Services',
+          href: '/servicesV2',
           children: [
-            { 
-              label: 'Change Management', 
-              href: '#',
+            {
+              label: 'Change Management',
+              href: '/services#change-management',
               slug: 'change-management'
             },
-            { 
-              label: 'Cloud Migration and Architecture', 
-              href: '#',
+            {
+              label: 'Cloud Migration and Architecture',
+              href: '/services#cloud-migration-and-architecture',
               slug: 'cloud-migration-and-architecture'
             },
-            { 
-              label: 'Managed Services', 
-              href: '#',
+            {
+              label: 'Managed Services',
+              href: '/services#managed-services',
               slug: 'managed-services'
             },
-            { 
-              label: 'Data & Analytics', 
-              href: '#',
+            {
+              label: 'Data & Analytics',
+              href: '/services#data-analytics',
               slug: 'data-analytics'
             },
-            { 
-              label: 'Implementation', 
-              href: '#',
+            {
+              label: 'Implementation',
+              href: '/services#implementation',
               slug: 'implementation'
             },
-            { 
-              label: 'Integration', 
-              href: '#',
+            {
+              label: 'Integration',
+              href: '/services#integration',
               slug: 'integration'
             },
-            { 
-              label: 'Managed Services & Support', 
-              href: '#',
+            {
+              label: 'Managed Services & Support',
+              href: '/services#managed-services-support',
               slug: 'managed-services-support'
             },
-            { 
-              label: 'Program Management', 
-              href: '#',
+            {
+              label: 'Program Management',
+              href: '/services#program-management',
               slug: 'program-management'
             },
-            { 
-              label: 'Strategy & Consulting', 
-              href: '#',
+            {
+              label: 'Strategy & Consulting',
+              href: '/services#strategy-consulting',
               slug: 'strategy-consulting'
             },
           ],
         },
         {
           label: 'Industries',
+          href: '/industries',
           children: [
-            { 
-              label: 'Manufacturing', 
-              href: '#',
+            {
+              label: 'Manufacturing',
+              href: '/industries#manufacturing',
               slug: 'manufacturing'
             },
-            { 
-              label: 'Recycling', 
-              href: '#',
+            {
+              label: 'Recycling',
+              href: '/industries#recycling',
               slug: 'recycling'
             },
-            { 
-              label: 'Produce Market', 
-              href: '#',
+            {
+              label: 'Produce Market',
+              href: '/industries#produce-market',
               slug: 'produce-market'
             },
-            { 
-              label: 'Grocery & Retail', 
-              href: '#',
+            {
+              label: 'Grocery & Retail',
+              href: '/industries#grocery-retail',
               slug: 'grocery-retail'
             },
           ],
         },
 
-        { 
-          label: 'Technologies', 
-          href: '#technologies',
-          slug: 'technologies'
-        },
+        {
+          label: 'Technologies',
+          href: '/technologies',
+          children: [
+            {
+              label: 'Enterprise Platforms',
+              href: '/technologies#enterprise-platforms',
+              slug: 'enterprise-platforms'
+            },
+            {
+              label: 'Cloud & Infrastructure',
+              href: '/technologies#cloud-infrastructure',
+              slug: 'cloud-infrastructure'
+            },
+            {
+              label: 'Data, Analytics & AI',
+              href: '/technologies#data-analytics-ai',
+              slug: 'data-analytics-ai'
+            },
+            {
+              label: 'Application Development & Integration',
+              href: '/technologies#application-development-integration',
+              slug: 'application-development-integration'
+            },
+            {
+              label: 'Cybersecurity & Compliance',
+              href: '/technologies#cybersecurity-compliance',
+              slug: 'cybersecurity-compliance'
+            },
+          ],
+        }
+
       ],
     },
     {
       label: 'How we do it',
       children: [
-        { 
-          label: 'SAP/Salesforce', 
+        {
+          label: 'SAP/Salesforce',
           href: '#',
           slug: 'sap-salesforce'
         },
-        { 
-          label: 'Microsoft', 
+        {
+          label: 'Microsoft',
           href: '#',
           slug: 'microsoft'
         },
-        { 
-          label: 'Customs Solutions', 
+        {
+          label: 'Customs Solutions',
           href: '#',
           slug: 'customs-solutions'
         },
-        { 
-          label: 'Security Stack', 
+        {
+          label: 'Security Stack',
           href: '#',
           slug: 'security-stack-how'
         },
@@ -157,33 +186,33 @@ export class NavigationService {
     {
       label: 'Why DCC',
       children: [
-        { 
-          label: 'Mission', 
+        {
+          label: 'Mission',
           href: '#',
           slug: 'mission'
         },
-        { 
-          label: 'Vision', 
+        {
+          label: 'Vision',
           href: '#',
           slug: 'vision'
         },
-        { 
-          label: 'Approach', 
+        {
+          label: 'Approach',
           href: '#',
           slug: 'approach'
         },
-        { 
-          label: 'Leadership', 
+        {
+          label: 'Leadership',
           href: '#',
           slug: 'leadership'
         },
-        { 
-          label: 'Partnerships', 
+        {
+          label: 'Partnerships',
           href: '#',
           slug: 'partnerships'
         },
-        { 
-          label: 'News', 
+        {
+          label: 'News',
           href: '#',
           slug: 'news'
         },
@@ -192,13 +221,13 @@ export class NavigationService {
     {
       label: 'Insights',
       children: [
-        { 
-          label: 'Success Stories', 
+        {
+          label: 'Success Stories',
           href: '#',
           slug: 'success-stories'
         },
-        { 
-          label: 'Events', 
+        {
+          label: 'Events',
           href: '#',
           slug: 'events'
         },
@@ -207,18 +236,18 @@ export class NavigationService {
     {
       label: 'Careers',
       children: [
-        { 
-          label: 'Why work with DCC?', 
+        {
+          label: 'Why work with DCC?',
           href: '#',
           slug: 'why-work-with-dcc'
         },
-        { 
-          label: 'Benefits', 
+        {
+          label: 'Benefits',
           href: '#',
           slug: 'benefits'
         },
-        { 
-          label: 'Open Positions', 
+        {
+          label: 'Open Positions',
           href: '#',
           slug: 'open-positions'
         },
@@ -227,18 +256,18 @@ export class NavigationService {
     {
       label: 'Contact',
       children: [
-        { 
-          label: 'Send Message', 
+        {
+          label: 'Send Message',
           href: '#',
           slug: 'send-message'
         },
-        { 
-          label: 'Submit RFP', 
+        {
+          label: 'Submit RFP',
           href: '#',
           slug: 'submit-rfp'
         },
-        { 
-          label: 'Schedule Meeting', 
+        {
+          label: 'Schedule Meeting',
           href: '#',
           slug: 'schedule-meeting'
         },
@@ -246,7 +275,7 @@ export class NavigationService {
     },
   ];
 
-  constructor() {}
+  constructor() { }
 
   getMainNavigation(): MenuItem[] {
     return this.mainNavigation;
