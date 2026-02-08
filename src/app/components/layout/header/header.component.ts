@@ -66,27 +66,26 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateToDetails(item: MenuItem, parentLabels: string[] = []): void {
     if (item.href && item.href.startsWith('/solutions#')) {
       // Handle solutions navigation with fragment
-      window.location.href = item.href;
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/solutions'], { fragment: fragment });
     } else if (item.href && item.href.startsWith('/solutions')) {
       // Handle direct solutions page navigation
       this.router.navigate(['/solutions']);
-    }
-
-    if (item.href && item.href.startsWith('/industries#')) {
+    } else if (item.href && item.href.startsWith('/industries#')) {
       // Handle industries navigation with fragment
-      window.location.href = item.href;
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/industries'], { fragment: fragment });
     } else if (item.href && item.href.startsWith('/industries')) {
       // Handle direct industries page navigation
       this.router.navigate(['/industries']);
-    }
-    if (item.href && item.href.startsWith('/technologies#')) {
-      // Handle industries navigation with fragment
-      window.location.href = item.href;
+    } else if (item.href && item.href.startsWith('/technologies#')) {
+      // Handle technologies navigation with fragment
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/technologies'], { fragment: fragment });
     } else if (item.href && item.href.startsWith('/technologies')) {
-      // Handle direct industries page navigation
+      // Handle direct technologies page navigation
       this.router.navigate(['/technologies']);
-    }
-    else if (item.slug) {
+    } else if (item.slug) {
       // Handle details navigation
       const breadcrumb = [...parentLabels, item.label].join(' > ');
       this.router.navigate(['/details', item.slug], {
