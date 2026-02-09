@@ -71,7 +71,16 @@ export class HeaderComponent implements OnInit, OnDestroy {
     } else if (item.href && item.href.startsWith('/solutions')) {
       // Handle direct solutions page navigation
       this.router.navigate(['/solutions']);
-    } else if (item.href && item.href.startsWith('/industries#')) {
+    }
+    else if (item.href && item.href.startsWith('/service#')) {
+      // Handle service navigation with fragment
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/service'], { fragment: fragment });
+    } else if (item.href && item.href.startsWith('/service')) {
+      // Handle direct service page navigation
+      this.router.navigate(['/service']);
+    }
+    else if (item.href && item.href.startsWith('/industries#')) {
       // Handle industries navigation with fragment
       const fragment = item.href.split('#')[1];
       this.router.navigate(['/industries'], { fragment: fragment });

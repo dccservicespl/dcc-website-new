@@ -48,51 +48,51 @@ export class NavigationService {
         },
         {
           label: 'Services',
-          href: '/servicesV2',
+          href: '/service',
           children: [
             {
               label: 'Change Management',
-              href: '/services#change-management',
+              href: '/service#change-management',
               slug: 'change-management'
             },
             {
               label: 'Cloud Migration and Architecture',
-              href: '/services#cloud-migration-and-architecture',
+              href: '/service#cloud-migration-and-architecture',
               slug: 'cloud-migration-and-architecture'
             },
             {
               label: 'Managed Services',
-              href: '/services#managed-services',
+              href: '/service#managed-services',
               slug: 'managed-services'
             },
             {
               label: 'Data & Analytics',
-              href: '/services#data-analytics',
+              href: '/service#data-analytics',
               slug: 'data-analytics'
             },
             {
               label: 'Implementation',
-              href: '/services#implementation',
+              href: '/service#implementation',
               slug: 'implementation'
             },
             {
               label: 'Integration',
-              href: '/services#integration',
+              href: '/service#integration',
               slug: 'integration'
             },
             {
-              label: 'Managed Services & Support',
-              href: '/services#managed-services-support',
-              slug: 'managed-services-support'
+              label: 'Managed Support',
+              href: '/service#managed-support',
+              slug: 'managed-support'
             },
             {
               label: 'Program Management',
-              href: '/services#program-management',
+              href: '/service#program-management',
               slug: 'program-management'
             },
             {
               label: 'Strategy & Consulting',
-              href: '/services#strategy-consulting',
+              href: '/service#strategy-consulting',
               slug: 'strategy-consulting'
             },
           ],
@@ -129,9 +129,19 @@ export class NavigationService {
           href: '/technologies',
           children: [
             {
-              label: 'Enterprise Platforms',
-              href: '/technologies#enterprise-platforms',
-              slug: 'enterprise-platforms'
+              label: 'Enterprise Platforms - SAP',
+              href: '/technologies#enterprise-platforms-sap',
+              slug: 'enterprise-platforms-sap'
+            },
+            {
+              label: 'Enterprise Platforms - Microsoft',
+              href: '/technologies#enterprise-platforms-microsoft',
+              slug: 'enterprise-platforms-microsoft'
+            },
+            {
+              label: 'Enterprise Platforms - Salesforce',
+              href: '/technologies#enterprise-platforms-salesforce',
+              slug: 'enterprise-platforms-salesforce'
             },
             {
               label: 'Cloud & Infrastructure',

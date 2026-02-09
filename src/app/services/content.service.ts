@@ -891,6 +891,184 @@ We focus on clear communication, training, and getting everyone on board to redu
 
       },
 
+      {
+        title: 'Managed Services',
+        subtitle: 'Reliable Operations with Predictable Costs',
+        description: `Our Managed Services provide continuous monitoring, management, and optimization of your enterprise systems and infrastructure. Consider DCC an extension of your IT team, ensuring stability, performance, and compliance.`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'Application Management Services (AMS)',
+          'Infrastructure & Cloud Management',
+          'Proactive Monitoring & Incident Management',
+          'Patch Management & Upgrades',
+          'SLA-Driven Support Models'
+        ],
+        outcomes: [
+          'Reduced downtime',
+          'Predictable IT operating costs',
+          'Improved system performance'
+
+        ],
+
+      },
+
+      {
+        title: 'Data & Analytics',
+        subtitle: 'Turn Enterprise Data into Actionable Insights',
+        description: `DCC delivers analytics solutions that provide clear visibility into business performance, enabling faster and more informed decision-making. We help organizations unify data across ERP, CRM, and operational systems.`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'Data Strategy & Architecture',
+          'Power BI & Enterprise Reporting',
+          'Data Integration & Warehousing',
+          'Advanced Analytics & Forecasting',
+          'AI-Driven Insights'
+
+        ],
+        outcomes: [
+          'Improved operational visibility',
+          'Faster decision cycles',
+          'Data-driven business strategy'
+        ],
+
+      },
+
+      {
+        title: 'Implementation',
+        subtitle: 'Structured, Predictable, and On-Time Delivery',
+        description: `DCC provides end-to-end implementation services for ERP, CRM, analytics, and enterprise applications. Our proven delivery methods ensure projects are completed on time, within scope, and aligned with business requirements.`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'ERP & CRM Implementations',
+          'Application Deployments',
+          'Configuration & Customization',
+          'User Acceptance Testing (UAT)',
+          'Go-Live & Post-Go-Live Support'
+
+        ],
+        outcomes: [
+          'Reduced project risk',
+          'Faster time-to-value',
+          'High-quality system adoption'
+
+        ],
+
+      },
+
+      {
+        title: 'Integration',
+        subtitle: 'Seamless Connectivity Across Enterprise Systems',
+        description: `We design and implement secure, scalable integrations that connect ERP, CRM, cloud platforms, and third-party applications—ensuring consistent data flow and process automation.`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'ERP & CRM Integrations',
+          'API & Middleware Solutions',
+          'Data Synchronization',
+          'Legacy System Integration',
+          'Real-Time & Batch Processing'
+
+        ],
+        outcomes: [
+          'Improved data accuracy',
+          'Streamlined business processes',
+          'Reduced manual effort'
+
+        ],
+
+      },
+
+      {
+        title: 'Managed Support',
+        subtitle: 'Continuous Support for Mission-Critical Systems',
+        description: `DCC provides ongoing support services to ensure your enterprise systems remain secure, up-to-date, and optimized. Our support models are flexible and tailored to your business needs.`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'Tiered Support (L1, L2, L3)',
+          'Incident & Problem Management',
+          'System Enhancements',
+          'Performance Optimization',
+          'Compliance & Audit Support',
+
+        ],
+        outcomes: [
+          'Stable and reliable systems',
+          'Faster issue resolution',
+          'Long-term operational confidence'
+
+        ],
+
+      },
+
+      {
+        title: 'Program Management',
+        subtitle: 'Governance and Control for Complex Initiatives',
+        description: `Our Program Management services ensure large-scale, multi-workstream initiatives are delivered with clear governance, transparency, and accountability.`,
+
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'Program & Portfolio Management',
+          'PMO Setup & Governance',
+          'Risk & Dependency Management',
+          'Budget & Resource Tracking',
+          'Executive Reporting'
+
+        ],
+        outcomes: [
+          'Improved project predictability',
+          'Clear stakeholder visibility',
+          'Reduced delivery risk'
+        ],
+
+      },
+
+      {
+        title: 'Strategy & Consulting',
+        subtitle: 'Align Technology with Business Objectives',
+        description: `DCC's Strategy & Consulting services help organizations define technology roadmaps that support growth, efficiency, and long-term competitiveness.`,
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'IT Strategy & Roadmaps',
+          'Digital Transformation Planning',
+          'ERP & Application Assessments',
+          'Process Optimization',
+          'Vendor & Platform Selection'
+
+        ],
+        outcomes: [
+          'Clear strategic direction',
+          'Optimized technology investments',
+          'Measurable business impact'
+
+        ],
+
+      },
+
     ];
   }
 

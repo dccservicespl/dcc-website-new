@@ -46,7 +46,9 @@ export class TechnologiesComponent implements OnInit, AfterViewInit {
 
   private filterTechnologies(slug: string): void {
     const slugToTitle: { [key: string]: string } = {
-      'enterprise-platforms': 'Enterprise Platforms',
+      'enterprise-platforms-sap': 'Enterprise Platforms - SAP',
+      'enterprise-platforms-microsoft': 'Enterprise Platforms - Microsoft',
+      'enterprise-platforms-salesforce': 'Enterprise Platforms - Salesforce',
       'cloud-infrastructure': 'Cloud & Infrastructure',
       'data-analytics-ai': 'Data, Analytics & AI',
       'application-development-integration': 'Application Development & Integration',
@@ -78,7 +80,9 @@ export class TechnologiesComponent implements OnInit, AfterViewInit {
 
   getTechnologyId(technology: TechnologyCard): string {
     const titleToSlug: { [key: string]: string } = {
-      'Enterprise Platforms': 'enterprise-platforms',
+      'Enterprise Platforms - SAP': 'enterprise-platforms-sap',
+      'Enterprise Platforms - Microsoft': 'enterprise-platforms-microsoft',
+      'Enterprise Platforms - Salesforce': 'enterprise-platforms-salesforce',
       'Cloud & Infrastructure': 'cloud-infrastructure',
       'Data, Analytics & AI': 'data-analytics-ai',
       'Application Development & Integration': 'application-development-integration',

@@ -16,6 +16,7 @@ import { HomeComponent } from './components/home/home.component';
 import { SolutionsComponent } from './components/solutions/solutions.component';
 import { IndustriesComponent } from './components/industries/industries/industries.component';
 import { TechnologiesComponent } from './components/technologies/technologies/technologies.component';
+import { ServiceComponent } from './components/service/service/service.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { TechnologiesComponent } from './components/technologies/technologies/te
     SolutionsComponent,
     IndustriesComponent,
     TechnologiesComponent,
+    ServiceComponent,
 
   ],
   imports: [
