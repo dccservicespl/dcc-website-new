@@ -1,0 +1,110 @@
+<section class="py-20 bg-white/40">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Header Section -->
+        <div class="text-center mb-16 mt-2">
+            <!-- <span class="section-tag mb-4">Our Solutions</span> -->
+            <h1 class="text-5xl font-black text-slate-900 mb-6">
+                Microsoft <span class="text-brand"></span>
+            </h1>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                DCC helps you get more from the Microsoft ecosystem—modern workplace, cloud, data, and security—without
+                overcomplicating implementation or support.
+            </p>
+
+            <!-- Show All Solutions Button (when filtered) -->
+            <div class="mt-8" *ngIf="selectedMicrosoftSlug">
+
+
+                <!-- Solution Navigation Pills -->
+                <div class="microsoft-nav-pills flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
+                    <ng-container *ngFor="let microsoft of microsofts">
+                        <a [href]="'/microsoft#' + getMicrosoftId(microsoft)"
+                            class="px-4 py-2 rounded-full text-xs font-medium transition-all duration-300" [ngClass]="{
+                'bg-brand text-white':
+                  getMicrosoftId(microsoft) === selectedMicrosoftSlug,
+                'bg-slate-100 text-slate-600 hover:bg-slate-200':
+                  getMicrosoftId(microsoft) !== selectedMicrosoftSlug,
+              }">
+                            {{ microsoft.title.split("(")[0].trim() }}
+                        </a>
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solutions Grid -->
+        <div class="microsofts-container space-y-20">
+            <div *ngFor="let microsoft of filteredMicrosofts; let i = index"
+                class="grid lg:grid-cols-12 gap-12 items-center filtered-microsoft rounded-[1rem] p-5"
+                [ngClass]="{ 'lg:grid-flow-col-dense': i % 2 === 1 }" [id]="getMicrosoftId(microsoft)">
+                <!-- Content Side -->
+                <div class="lg:col-span-6" [ngClass]="{ 'lg:col-start-7': i % 2 === 1 }">
+                    <div class="glass-card p-8 rounded-[2rem] h-full">
+                        <div class="w-12 h-12 rounded-xl flex items-center justify-center mb-6 shadow-inner" [ngClass]="{
+                'bg-blue-50 text-blue-500': microsoft.color === 'blue',
+                'bg-orange-50 text-orange-500': microsoft.color === 'orange',
+                'bg-red-50 text-red-500': microsoft.color === 'red',
+                'bg-green-50 text-green-500': microsoft.color === 'green',
+                'bg-purple-50 text-purple-500': microsoft.color === 'purple',
+              }">
+                            <i [class]="microsoft.icon + ' text-xl'"></i>
+                        </div>
+                        <h2 class="text-2xl font-black text-slate-900 mb-3">
+                            {{ microsoft.title }}
+                        </h2>
+                        <p class="text-brand font-semibold text-sm mb-4">
+                            {{ microsoft.subtitle }}
+                        </p>
+                        <p class="text-slate-600 leading-relaxed mb-6 whitespace-pre-line">
+                            {{ microsoft.description }}
+                        </p>
+
+                        <!-- Key Capabilities -->
+                        <div class="mb-6">
+                            <h3 class="font-bold text-slate-900 mb-3">Key Capabilities</h3>
+                            <div class="grid grid-cols-1 gap-2">
+                                <div *ngFor="let capability of microsoft.capabilities"
+                                    class="flex items-center text-sm text-slate-600">
+                                    <div class="w-1.5 h-1.5 bg-brand rounded-full mr-3 flex-shrink-0"></div>
+                                    {{ capability }}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Business Outcomes -->
+                        <div>
+                            <h3 class="font-bold text-slate-900 mb-3">Business Outcomes</h3>
+                            <div class="grid grid-cols-2 gap-3">
+                                <div *ngFor="let outcome of microsoft.outcomes"
+                                    class="bg-slate-50/50 rounded-lg p-3 border border-slate-100">
+                                    <div class="text-xs text-slate-600">{{ outcome }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Side -->
+                <div class="lg:col-span-6" [ngClass]="{ 'lg:col-start-1 lg:row-start-1': i % 2 === 1 }">
+                    <div class="relative">
+                        <div class="aspect-[4/3] rounded-[2rem] overflow-hidden shadow-2xl">
+                            <img [src]="microsoft.image" [alt]="microsoft.title" class="w-full h-full object-cover" />
+                            <!-- Overlay with stats -->
+
+                        </div>
+
+                        <!-- Floating accent -->
+                        <div class="absolute -top-4 -right-4 w-24 h-24 rounded-full opacity-20 blur-xl" [ngClass]="{
+                'bg-blue-500': microsoft.color === 'blue',
+                'bg-orange-500': microsoft.color === 'orange',
+                'bg-red-500': microsoft.color === 'red',
+                'bg-green-500': microsoft.color === 'green',
+                'bg-purple-500': microsoft.color === 'purple',
+              }"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>

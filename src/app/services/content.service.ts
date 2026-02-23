@@ -86,6 +86,25 @@ export interface TechnologyCard {
   stats?: { value: string; label: string }[];
 }
 
+export interface SapSalesforceCard {
+  title: string;
+  subtitle: string;
+  description: string;
+
+}
+
+export interface MicrosoftCard {
+  title: string;
+  subtitle: string;
+  description: string;
+  icon: string;
+  color: string;
+  image: string;
+  capabilities: string[];
+  outcomes: string[];
+
+}
+
 
 @Injectable({
   providedIn: 'root',
@@ -1294,10 +1313,66 @@ Our solutions integrate finance, operations, inventory, and analytics to help re
 
       }
 
+    ];
+  }
+
+  getSapSalesforces(): SapSalesforceCard[] {
+    return [
+      {
+        title: 'One Stop Shop',
+        subtitle: 'What We Offer',
+        description: `Data Consultants offers an entire portfolio of services related to SAP – defining the KPI driven objective to implementations, miscellaneous enhancements & review. Data Consultants also assists the clients realize the benefit irrespective of the stage in the SAP journey.`,
+
+      },
+      {
+        title: 'Adaptability',
+        subtitle: 'The Way We Engage',
+        description: `Continuous innovations paired with flexibility fosters an unmatched client experience. Data Consultants team is always committed to evolving client needs and is agile enough to respond to the same, resulting in long term relationships.`,
+
+      },
+
+      {
+        title: 'Quick Results',
+        subtitle: 'How We Deliver',
+        description: `Data Consultants, owing to their years of experience across the various industries, have adopted a focused and industry centric approach. The tools and templates help Data Consultants start engagements quickly and show results from day one.`,
+
+      },
+
 
     ];
   }
 
+  getMicrosofts(): MicrosoftCard[] {
+    return [
+      {
+        title: 'Microsoft',
+        subtitle: 'Turn Microsoft into a secure, scalable operating platform.',
+        description: `What we deliver :
+- Cloud & infrastructure modernization for performance, uptime, and cost control
+- Data & analytics enablement for faster decisions and clearer KPI ownership
+- Governance & security alignment for real-world risk reduction`,
 
+        icon: 'fas fa-server',
+        color: 'blue',
+        image: 'assets/images/ERP.jpg',
+
+        capabilities: [
+          'Microsoft Azure architecture, migration support, and optimization',
+          'Microsoft 365 tenant planning, identity, and endpoint readiness',
+          'Microsoft Power BI dashboards and semantic models for leadership reporting',
+          'Microsoft Dynamics 365 advisory and integration services (as needed)',
+          'Identity and access planning with Microsoft Entra',
+        ],
+        outcomes: [
+          'Reduced operational overhead with standardized cloud services',
+          'Higher user productivity with practical governance and adoption',
+          'Better visibility across systems with unified reporting',
+        ],
+
+      },
+
+    ];
+
+  }
 
 }

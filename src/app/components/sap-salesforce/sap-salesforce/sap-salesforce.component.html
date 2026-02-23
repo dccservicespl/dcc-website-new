@@ -1,0 +1,484 @@
+<section class="relative w-full">
+    <img src="assets/images/sap2.jpg" alt="Salesforce Banner" class="w-full h-[350px] object-cover" />
+</section>
+<section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Page Heading -->
+        <div class="mb-16">
+
+            <!-- Title (Keep Centered) -->
+            <h1 class="text-5xl font-black text-slate-900 mb-12 text-center">
+                About Our SAP
+            </h1>
+
+            <!-- Image + Paragraph Row -->
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+
+                <!-- Left Image -->
+                <div class="flex justify-center md:justify-start">
+                    <img src="assets/images/sap.png" alt="SAP Consulting"
+                        class="w-full max-w-sm md:max-w-md rounded-2xl shadow-lg object-contain" />
+                </div>
+
+                <!-- Right Paragraph -->
+                <div>
+                    <p class="text-lg text-slate-600 leading-relaxed">
+                        Data Consultants Corporation is a global strategic consulting partner of SAP, both in US and
+                        India and
+                        is one of the leading implementation partners for SAP India. The practice comprises of
+                        SAP-skilled
+                        resources working on value-driven engagements for diversified industries in US and India.
+                        Data Consultants Corporation offers an entire portfolio of services related to SAP - it also
+                        supports
+                        the journey towards HANA. Data Consultants Corporation also assists the clients to realize the
+                        benefit
+                        of SAP using a customer benefit realization approach. Data Consultants team works towards a set
+                        of KPIs
+                        defined in advance, aligned with best practices in the respective industry and deliver the
+                        project with
+                        established methodology. Wide portfolio of services offered by Data Consultants Corporation SAP
+                        team
+                        makes it a one stop shop for the clients, irrespective of the stage in the SAP journey.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- 3 Cards Section -->
+        <div class="grid md:grid-cols-3 gap-10 mt-16">
+
+            <div *ngFor="let item of sapSalesforces"
+                class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border border-slate-100">
+
+                <h2 class="text-2xl font-semibold text-slate-900 mb-2">
+                    {{ item.title }}
+                </h2>
+
+                <h4 class="text-brand font-medium mb-4">
+                    {{ item.subtitle }}
+                </h4>
+
+                <p class="text-slate-600 leading-relaxed">
+                    {{ item.description }}
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Fuel Sourcing Banner Section -->
+<section class="relative w-full h-[200px] md:h-[220px] flex items-center justify-center text-center">
+
+    <!-- Background Image -->
+    <div class="absolute inset-0">
+        <img src="assets/images/sap_fuel.png" alt="Fuel Sourcing" class="w-full h-full object-cover" />
+    </div>
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black/70"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 max-w-4xl px-6">
+        <h5 class="text-2xl md:text-3xl font-semibold text-white mb-6 leading-snug">
+            Our Exclusively Innovative solution for <br />
+            Fuel Sourcing
+        </h5>
+
+        <button
+            class="border border-white text-white px-8 py-3 rounded-lg text-lg font-medium hover:bg-white hover:text-black transition duration-300">
+            Know More
+        </button>
+    </div>
+
+</section>
+
+<section class="py-14 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-14 tracking-tight">
+            Our Credibility
+        </h2>
+
+        <!-- Cards Grid -->
+        <div class="grid md:grid-cols-2 gap-8">
+
+            <!-- Card 1 -->
+            <div class="bg-white py-6 px-8 rounded-2xl border border-gray-100 
+                        shadow-sm hover:shadow-xl hover:-translate-y-1 
+                        transition-all duration-300">
+
+                <div class="flex gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-lg 
+                                bg-gradient-to-br from-sky-500 to-blue-600 
+                                shadow-md flex-shrink-0">
+                        <img src="assets/icons/gear.svg" class="w-6 h-6 invert brightness-0" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">
+                            SAP Implementation Services
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            This refers to greenfield/brownfield implementation of SAP.
+                            Data Consultants has strong expertise...
+                        </p>
+                        <button (click)="openModal('implementation')"
+                            class="text-sky-600 text-sm font-medium hover:underline">
+                            more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="bg-white py-6 px-8 rounded-2xl border border-gray-100 
+                        shadow-sm hover:shadow-xl hover:-translate-y-1 
+                        transition-all duration-300">
+
+                <div class="flex gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-lg 
+                                bg-gradient-to-br from-sky-500 to-blue-600 
+                                shadow-md flex-shrink-0">
+                        <img src="assets/icons/gear.svg" class="w-6 h-6 invert brightness-0" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">
+                            SAP Application Management Services (AMS)
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Application Management Services span across the entire SAP landscape ensuring optimization
+                            and performance.
+                        </p>
+                        <button (click)="openModal('ams')" class="text-sky-600 text-sm font-medium hover:underline">
+                            more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="bg-white py-6 px-8 rounded-2xl border border-gray-100 
+                        shadow-sm hover:shadow-xl hover:-translate-y-1 
+                        transition-all duration-300">
+
+                <div class="flex gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-lg 
+                                bg-gradient-to-br from-sky-500 to-blue-600 
+                                shadow-md flex-shrink-0">
+                        <img src="assets/icons/gear.svg" class="w-6 h-6 invert brightness-0" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">
+                            SAP Migration Services
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Mock Migration services offering real-time visibility and transformation efficiency.
+                        </p>
+                        <button (click)="openModal('migration')"
+                            class="text-sky-600 text-sm font-medium hover:underline">
+                            more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="bg-white py-6 px-8 rounded-2xl border border-gray-100 
+                        shadow-sm hover:shadow-xl hover:-translate-y-1 
+                        transition-all duration-300">
+
+                <div class="flex gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-lg 
+                                bg-gradient-to-br from-sky-500 to-blue-600 
+                                shadow-md flex-shrink-0">
+                        <img src="assets/icons/gear.svg" class="w-6 h-6 invert brightness-0" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">
+                            SAP Offshore Delivery Centre (ODC)
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Enhancements, interfaces, conversions, reports and forms development.
+                        </p>
+                        <button (click)="openModal('odc')" class="text-sky-600 text-sm font-medium hover:underline">
+                            more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="bg-white py-6 px-8 rounded-2xl border border-gray-100 
+                        shadow-sm hover:shadow-xl hover:-translate-y-1 
+                        transition-all duration-300">
+
+                <div class="flex gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-lg 
+                                bg-gradient-to-br from-sky-500 to-blue-600 
+                                shadow-md flex-shrink-0">
+                        <img src="assets/icons/gear.svg" class="w-6 h-6 invert brightness-0" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">
+                            SAP Advanced Services
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Advanced SAP services across specialized domains and industries.
+                        </p>
+                        <button (click)="openModal('advanced')"
+                            class="text-sky-600 text-sm font-medium hover:underline">
+                            more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="bg-white py-6 px-8 rounded-2xl border border-gray-100 
+                        shadow-sm hover:shadow-xl hover:-translate-y-1 
+                        transition-all duration-300">
+
+                <div class="flex gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-lg 
+                                bg-gradient-to-br from-sky-500 to-blue-600 
+                                shadow-md flex-shrink-0">
+                        <img src="assets/icons/gear.svg" class="w-6 h-6 invert brightness-0" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">
+                            SAP Fuel Sourcing Solution
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Template-based SAP solution designed for thermal power generation.
+                        </p>
+                        <button (click)="openModal('fuel')" class="text-sky-600 text-sm font-medium hover:underline">
+                            more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="bg-white py-6 px-8 rounded-2xl border border-gray-100 
+                        shadow-sm hover:shadow-xl hover:-translate-y-1 
+                        transition-all duration-300">
+
+                <div class="flex gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-lg 
+                                bg-gradient-to-br from-sky-500 to-blue-600 
+                                shadow-md flex-shrink-0">
+                        <img src="assets/icons/gear.svg" class="w-6 h-6 invert brightness-0" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">
+                            SAP WM/EWM Implementation Services
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Advanced SAP services across specialized domains and industries.
+                        </p>
+                        <button (click)="openModal('wmewm')" class="text-sky-600 text-sm font-medium hover:underline">
+                            more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="bg-white py-6 px-8 rounded-2xl border border-gray-100 
+                        shadow-sm hover:shadow-xl hover:-translate-y-1 
+                        transition-all duration-300">
+
+                <div class="flex gap-4">
+                    <div class="w-14 h-14 flex items-center justify-center rounded-lg 
+                                bg-gradient-to-br from-sky-500 to-blue-600 
+                                shadow-md flex-shrink-0">
+                        <img src="assets/icons/gear.svg" class="w-6 h-6 invert brightness-0" />
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold text-sky-700 mb-2">
+                            SAP Document Management & Collaboration
+                        </h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-2">
+                            Template-based SAP solution designed for thermal power generation.
+                        </p>
+                        <button (click)="openModal('docmanage')"
+                            class="text-sky-600 text-sm font-medium hover:underline">
+                            more
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Top Headings -->
+        <div class="grid md:grid-cols-2 gap-10 mb-14">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
+                Data Consultants Approach S/4HANA
+            </h2>
+
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 md:text-right">
+                Why SAP S/4HANA
+            </h2>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- Left Image -->
+            <div class="flex justify-center md:justify-start">
+                <img src="assets/images/sap-s4 HANA.jpg" alt="SAP S/4HANA"
+                    class="w-full max-w-xl rounded-lg shadow-md object-contain">
+            </div>
+
+            <!-- Right Feature Boxes -->
+            <div class="space-y-6">
+
+                <!-- Item 1 -->
+                <div class="bg-gray-200 px-6 py-5 rounded-md hover:bg-white hover:shadow-md transition duration-300">
+                    <p class="text-lg font-medium text-gray-800">
+                        Business Performance
+                    </p>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="bg-gray-200 px-6 py-5 rounded-md hover:bg-white hover:shadow-md transition duration-300">
+                    <p class="text-lg font-medium text-gray-800">
+                        Simplification
+                    </p>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="bg-gray-200 px-6 py-5 rounded-md hover:bg-white hover:shadow-md transition duration-300">
+                    <p class="text-lg font-medium text-gray-800">
+                        Agile & User-Friendly Interface
+                    </p>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="bg-gray-200 px-6 py-5 rounded-md hover:bg-white hover:shadow-md transition duration-300">
+                    <p class="text-lg font-medium text-gray-800">
+                        Future-proof Investment
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+
+            <!-- LEFT CONTENT -->
+            <div>
+
+                <!-- Heading -->
+                <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                    What is exciting about SAP Fiori
+                </h2>
+
+                <!-- Paragraph -->
+                <p class="text-lg text-gray-600 mb-10">
+                    SAP Fiori is a design system with simple screens that run on any device.
+                    It enables casual users to create business apps with consumer-grade user experience.
+                </p>
+
+                <!-- Feature Box 1 -->
+                <div class="bg-white shadow-md mb-6 flex items-center">
+                    <div class="w-2 bg-blue-600 h-full"></div>
+                    <div class="px-6 py-5">
+                        <p class="text-gray-800 text-lg">
+                            Improve user satisfaction while increasing productivity and data quality
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature Box 2 -->
+                <div class="bg-white shadow-md mb-6 flex items-center">
+                    <div class="w-2 bg-blue-600 h-full"></div>
+                    <div class="px-6 py-5">
+                        <p class="text-gray-800 text-lg">
+                            Work from anywhere with optimized native mobile and responsive Web apps
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Feature Box 3 -->
+                <div class="bg-white shadow-md flex items-center">
+                    <div class="w-2 bg-blue-600 h-full"></div>
+                    <div class="px-6 py-5">
+                        <p class="text-gray-800 text-lg">
+                            Adapt and scale development quickly using UI flexibility and rapid development
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT IMAGE -->
+            <div class="flex justify-center md:justify-end">
+                <img src="assets/images/sap_fiori.jpg" alt="SAP Fiori Devices" class="w-full max-w-lg object-contain">
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Modal -->
+<div *ngIf="isModalOpen" class="fixed inset-0 z-50 flex items-center justify-center">
+
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" (click)="closeModal()"></div>
+
+    <!-- Modal Box -->
+    <div class="relative bg-white w-[90%] md:w-[600px] rounded-2xl shadow-2xl p-8 z-10 animate-fadeIn">
+
+        <!-- Top Close Icon -->
+        <button class="absolute top-4 right-4 text-gray-400 hover:text-black text-xl" (click)="closeModal()">
+            ✕
+        </button>
+
+        <!-- Content -->
+        <h3 class="text-2xl font-bold text-sky-700 mb-4">
+            {{ modalData.title }}
+        </h3>
+
+        <p class="text-gray-600 leading-relaxed mb-8">
+            {{ modalData.description }}
+        </p>
+
+        <!-- Bottom Close Button -->
+        <div class="flex justify-end">
+            <button (click)="closeModal()" class="px-6 py-2 bg-sky-600 text-white rounded-lg 
+                       hover:bg-sky-700 transition duration-300 shadow-md">
+                Close
+            </button>
+        </div>
+
+    </div>
+</div>

@@ -17,6 +17,11 @@ import { SolutionsComponent } from './components/solutions/solutions.component';
 import { IndustriesComponent } from './components/industries/industries/industries.component';
 import { TechnologiesComponent } from './components/technologies/technologies/technologies.component';
 import { ServiceComponent } from './components/service/service/service.component';
+import { SapSalesforceComponent } from './components/sap-salesforce/sap-salesforce/sap-salesforce.component';
+import { MicrosoftComponent } from './components/microsoft/microsoft/microsoft.component';
+import { SalesforceComponent } from './components/salesforce/salesforce/salesforce.component';
+import { MissionComponent } from './components/mission/mission/mission.component';
+import { VisionComponent } from './components/vision/vision/vision.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +39,11 @@ import { ServiceComponent } from './components/service/service/service.component
     IndustriesComponent,
     TechnologiesComponent,
     ServiceComponent,
+    SapSalesforceComponent,
+    MicrosoftComponent,
+    SalesforceComponent,
+    MissionComponent,
+    VisionComponent,
 
   ],
   imports: [

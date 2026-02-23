@@ -94,7 +94,46 @@ export class HeaderComponent implements OnInit, OnDestroy {
     } else if (item.href && item.href.startsWith('/technologies')) {
       // Handle direct technologies page navigation
       this.router.navigate(['/technologies']);
-    } else if (item.slug) {
+    } else if (item.href && item.href.startsWith('/sap-salesforce#')) {
+      // Handle sap-salesforce navigation with fragment
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/sap-salesforce'], { fragment: fragment });
+    } else if (item.href && item.href.startsWith('/sap-salesforce')) {
+      // Handle direct sap-salesforce page navigation
+      this.router.navigate(['/sap-salesforce']);
+    } else if (item.href && item.href.startsWith('/salesforce#')) {
+      // Handle salesforce navigation with fragment
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/salesforce'], { fragment: fragment });
+    } else if (item.href && item.href.startsWith('/salesforce')) {
+      // Handle direct salesforce page navigation
+      this.router.navigate(['/salesforce']);
+    }
+    else if (item.href && item.href.startsWith('/microsoft#')) {
+      // Handle microsoft navigation with fragment
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/microsoft'], { fragment: fragment });
+    } else if (item.href && item.href.startsWith('/microsoft')) {
+      // Handle direct microsoft page navigation
+      this.router.navigate(['/microsoft']);
+    }
+    else if (item.href && item.href.startsWith('/mission#')) {
+      // Handle mission navigation with fragment
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/mission'], { fragment: fragment });
+    } else if (item.href && item.href.startsWith('/mission')) {
+      // Handle direct mission page navigation
+      this.router.navigate(['/mission']);
+    }
+    else if (item.href && item.href.startsWith('/vision#')) {
+      // Handle vision navigation with fragment
+      const fragment = item.href.split('#')[1];
+      this.router.navigate(['/vision'], { fragment: fragment });
+    } else if (item.href && item.href.startsWith('/vision')) {
+      // Handle direct vision page navigation
+      this.router.navigate(['/vision']);
+    }
+    else if (item.slug) {
       // Handle details navigation
       const breadcrumb = [...parentLabels, item.label].join(' > ');
       this.router.navigate(['/details', item.slug], {

@@ -172,13 +172,18 @@ export class NavigationService {
       label: 'How we do it',
       children: [
         {
-          label: 'SAP/Salesforce',
-          href: '#',
+          label: 'SAP',
+          href: '/sap-salesforce',
           slug: 'sap-salesforce'
         },
         {
+          label: 'Salesforce',
+          href: '/salesforce',
+          slug: 'salesforce'
+        },
+        {
           label: 'Microsoft',
-          href: '#',
+          href: '/microsoft',
           slug: 'microsoft'
         },
         {
@@ -198,12 +203,12 @@ export class NavigationService {
       children: [
         {
           label: 'Mission',
-          href: '#',
+          href: '/mission',
           slug: 'mission'
         },
         {
           label: 'Vision',
-          href: '#',
+          href: '/vision',
           slug: 'vision'
         },
         {
