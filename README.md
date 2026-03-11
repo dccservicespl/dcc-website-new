@@ -1,59 +1,53 @@
-# DccWebNew
+DCC Web Newer Version
+A modern, enterprise-ready web application built with Angular 21+. This project utilizes a standalone component architecture, avoiding legacy modules for a cleaner, faster, and more scalable codebase.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.4.
+🚀 Quick Start
+Prerequisites
+Make sure you have the following installed on your machine:
 
-## Development server
+Node.js: (LTS version recommended)
+npm: v11.6.2 (or compatible)
+Angular CLI: v21.0.4+ (npm install -g @angular/cli)
 
-To start a local development server, run:
+Installation
+Clone the repository and install the dependencies:
 
-```bash
+Bash
+
+# Install all required npm packages
+
+npm install
+Development Server
+To run the app locally with live-reloading:
+
+Bash
+
+# Starts the development server
+
 ng serve
-```
+Navigate to http://localhost:4200/. The application will automatically reload if you change any of the source files.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+🏗️ Project Architecture
+This application follows a modern Core / Features / Shared folder structure to cleanly separate layout components, specific pages, and global routing.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Plaintext
+dcc-web-new/
+├── public/ # Static assets served directly at the root path
+│ └── Images/ # Logos, banners, and icons (e.g., /Images/logo.png)
+├── src/
+│ ├── app/
+│ │ ├── core/ # Singleton layout elements and interceptors
+│ │ │ └── layout/
+│ │ │ ├── header/ # Sticky navbar and mega-menu logic
+│ │ │ └── footer/ # Global footer component
+│ │ ├── features/ # Routable page components (Lazy-loadable)
+│ │ │ ├── home/ # Landing page (Hero, Services, Marquee)
+│ │ │ └── about/ # About page
+│ │ ├── app.ts # Root component (holds <router-outlet> and smooth scroll init)
+│ │ └── app.routes.ts # Global route definitions
+│ ├── styles/ # Global CSS files (Bootstrap overrides, variables)
+│ ├── index.html # Main HTML entry point (contains CDN links)
+│ ├── main.ts # Application bootstrap file
+│ └── styles.css # Main stylesheet importing styles/ folder contents
+├── package.json # Project metadata and dependencies
+└── angular.json # Angular workspace configuration
