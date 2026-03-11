@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap%27');
 
 * {
   padding: 0;
@@ -168,6 +168,82 @@ header .logo {
   width: 100%;
 }
 
+.carousel-fade .carousel-item {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.8s;
+  /* Slightly faster for snappier feel */
+}
+
+.carousel-fade .carousel-item.active,
+.carousel-fade .carousel-item-next.carousel-item-start,
+.carousel-fade .carousel-item-prev.carousel-item-end {
+  opacity: 1;
+}
+
+.carousel-fade .active.carousel-item-start,
+.carousel-fade .active.carousel-item-end {
+  opacity: 0;
+}
+
+/* Initial States for Text Elements */
+.carousel-item .heading,
+.carousel-item .small,
+.carousel-item .mt-4 {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* Active State Animations */
+.carousel-item.active .heading {
+  animation: slideInText 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.4s;
+}
+
+.carousel-item.active .small {
+  animation: slideInText 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.6s;
+}
+
+.carousel-item.active .mt-4 {
+  animation: slideInText 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: 0.8s;
+}
+
+@keyframes slideInText {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Controls */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 80px;
+  z-index: 20;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 24px;
+  border-radius: 50%;
+  background-size: 40%;
+}
+
 /* Desktop height */
 @media (min-width: 768px) {
   .carousel-item img {
@@ -252,14 +328,15 @@ section.service .card-img-overlay {
   inset: 0;
   z-index: -1;
   display: flex;
+  padding: 0 100px;
   top: 0;
   justify-content: space-between;
 }
 
 .bg_effect .lines > div {
   height: 100%;
-  width: 2px;
-  background-color: #00000004;
+  width: 1px;
+  background-color: #0000000f;
 }
 
 section.advantage h5 {
@@ -294,8 +371,10 @@ section.advantage .card_dcc_adv {
   filter: blur(152.85000610351562px);
   width: 1089px;
   height: 382px;
+  left: 50%;
   position: absolute;
   bottom: 0;
+  transform: translateX(-50%);
 }
 
 section.work {

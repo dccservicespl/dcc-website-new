@@ -3,9 +3,15 @@
   <body>
     <!-- The Carousel -->
     <section class="hero_section">
-      <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div
+        id="mainCarousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="6000"
+        data-bs-pause="false"
+      >
         <div class="carousel-inner">
-          <!-- Slide 1: Using your provided logic -->
+          <!-- Slide 1 -->
           <div class="carousel-item active">
             <!-- Desktop Image -->
             <img src="./Images/banner-1.webp" class="d-md-block d-none" alt="" />
@@ -13,87 +19,97 @@
             <img src="./Images/banner_1_m.webp" class="d-md-none d-block" alt="" />
 
             <div class="card-img-overlay container">
-              <h2 class="mb-3 heading font">
-                <span class="color-sec"> Modernizing</span><br />
-                <span class="fw-bold color-sec">Enterprise Technology</span>
-              </h2>
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2 class="mb-3 heading fw-light">
+                    <span>Modernizing</span><br />
+                    <strong class="fw-bold">Enterprise Technology</strong>
+                  </h2>
 
-              <p class="col-9 col-lg-4 small">
-                Driving efficiency through SAP management, Cybersecurity, and tailored Gen-AI
-                solutions for global leaders.
-              </p>
+                  <p class="col-10 col-lg-7 small">
+                    Driving efficiency through SAP management, Cybersecurity, and tailored Gen-AI
+                    solutions for global leaders.
+                  </p>
 
-              <div class="mt-4">
-                <button class="btn_1">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <path
-                      d="M1 11L11 1"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M1 1H11V11"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <p>Contact Us</p>
-                </button>
+                  <div class="mt-4">
+                    <button class="btn_1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M1 11L11 1"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M1 1H11V11"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <p>Contact Us</p>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div class="carousel-item position-relative">
-            <!-- Desktop Image -->
+          <!-- Slide 2 -->
+          <div class="carousel-item">
             <img src="./Images/banner_2.webp" class="d-md-block d-none" alt="" />
             <!-- Mobile Image -->
-            <img src="./Images/banner_2_m.webp" class="d-md-none d-block" alt="" />
+            <img src="./Images/banner-2-m.webp" class="d-md-none d-block" alt="" />
 
             <div class="card-img-overlay container">
-              <h2 class="mb-3 heading font">
-                <span class="text-white"> Modernizing</span><br />
-                <span class="fw-bold text-white">Enterprise Technology</span>
-              </h2>
+              <div class="row">
+                <div class="col-lg-8">
+                  <h2 class="mb-3 heading fw-light">
+                    <span class="text-white">Secure Your</span><br />
+                    <strong class="fw-bold text-white">Digital Infrastructure</strong>
+                  </h2>
 
-              <p class="col-9 col-lg-4 small text-white">
-                Driving efficiency through SAP management, Cybersecurity, and tailored Gen-AI
-                solutions for global leaders.
-              </p>
+                  <p class="small mb-4 col-10 col-lg-7 text-white">
+                    End-to-end security protocols designed to protect your most valuable enterprise
+                    assets in an evolving threat landscape.
+                  </p>
 
-              <div class="mt-4">
-                <button class="btn_1">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="none"
-                  >
-                    <path
-                      d="M1 11L11 1"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M1 1H11V11"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-
-                  <p>Contact Us</p>
-                </button>
+                  <div class="mt-4">
+                    <button class="btn_1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 12 12"
+                        fill="none"
+                      >
+                        <path
+                          d="M1 11L11 1"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M1 1H11V11"
+                          stroke="white"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                      <p>Explore Solutions</p>
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -101,27 +117,21 @@
 
         <!-- Controls -->
         <button
-          class="carousel-control-prev"
+          class="carousel-control-prev d-none d-lg-block"
           type="button"
           data-bs-target="#mainCarousel"
           data-bs-slide="prev"
         >
-          <span
-            class="carousel-control-prev-icon bg-black/50 rounded-full"
-            aria-hidden="true"
-          ></span>
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
         <button
-          class="carousel-control-next"
+          class="carousel-control-next d-none d-lg-block"
           type="button"
           data-bs-target="#mainCarousel"
           data-bs-slide="next"
         >
-          <span
-            class="carousel-control-next-icon bg-black/50 rounded-full"
-            aria-hidden="true"
-          ></span>
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Next</span>
         </button>
       </div>
@@ -161,7 +171,7 @@
                 </p>
 
                 <div class="mt-5">
-                  <button class="btn_1">
+                  <button class="btn_1" routerLink="/about">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="12"
@@ -613,7 +623,12 @@
           </div>
 
           <div class="col-lg-7 mb-4">
-            <img src="./Images/recycle.webp" class="w-100" alt="recycle-image" srcset="" />
+            <img
+              src="./Images/recycle.webp"
+              class="w-100 img_small_screen"
+              alt="recycle-image"
+              srcset=""
+            />
           </div>
         </div>
       </div>

@@ -23,4 +23,69 @@
     width: 50px;
     height: 50px;
   }
+
+  header .accordion-button:not(.collapsed) {
+    color: #1f2937;
+    border-radius: 0;
+    background-color: #ebf3fe;
+    box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0
+      var(--bs-accordion-border-color);
+  }
+
+  header .accordion-button {
+    border-radius: 0;
+    padding: 20px 20px;
+  }
+
+  header .accordion-item {
+    /* border: 0; */
+    padding: 0;
+    border-top: 0;
+  }
+
+  header .accordion-item li a {
+    border-bottom: 1px solid #1f293747;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 16px;
+    align-items: center;
+  }
+
+  header .accordion-item ul li:first-child a {
+    padding-top: 0px;
+  }
+
+  header .accordion-item ul li:last-child a {
+    border: 0;
+  }
+
+  header .accordion-body {
+    padding: 0;
+  }
+
+  .offcanvas .schedule {
+    position: absolute;
+    bottom: 10px;
+    background-color: #fff;
+    border-top: 1px solid #ededed;
+  }
+
+  section.advantage .card_dcc_adv {
+    padding: 10px;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .img_small_screen {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  header .schedule {
+    font-size: 14px;
+  }
 }
