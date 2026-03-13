@@ -257,6 +257,20 @@ header.sticky-nav .navbar {
   background: url(/Images/bg_mega_solution.webp) rgb(0 0 0 / 94%) -45px -21.123px / 163.58% 119.744%
     no-repeat;
 }
+.bg_mega2 {
+  padding: 20px 20px 30px 20px;
+  display: flex;
+  height: 300px;
+  align-items: flex-end;
+  /* width: 100%; */
+  /* height: max-content; */
+  aspect-ratio: 67/61;
+  background-color: #000;
+  border-radius: 18px;
+  border-radius: 18px;
+  background: url(/Images/bg_mega_services.webp) rgb(0 0 0 / 94%) -45px -21.123px / 163.58% 119.744%
+    no-repeat;
+}
 
 .card_services {
   position: relative;

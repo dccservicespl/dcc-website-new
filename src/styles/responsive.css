@@ -1,3 +1,28 @@
+@media screen and (max-width: 1560px) {
+}
+
+@media (max-width: 767px) {
+  /* .timeline-track {
+                left: 50%;
+                width: 2px;
+                height: 100%;
+                border-left: 2px dashed #991b1b;
+                border-top: none;
+                top: 0;
+                transform: translateX(-50%);
+            } */
+  .timeline-card {
+    padding: 1.5rem;
+  }
+
+  .swiper {
+    width: 100%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    overflow: visible !important;
+  }
+}
+
 @media screen and (max-width: 550px) {
   .heading {
     font-size: 24px;
@@ -87,5 +112,18 @@
 
   header .schedule {
     font-size: 14px;
+  }
+
+  section.overview .highlight .fs-5 {
+    font-size: 14px !important;
+  }
+
+  section.mission .line,
+  section.mission .line2 {
+    display: none;
+  }
+
+  .bottom_bar_about {
+    display: none;
   }
 }
